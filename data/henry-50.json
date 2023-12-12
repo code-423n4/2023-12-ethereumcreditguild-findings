@@ -1,0 +1,11 @@
+{
+  "contest": 310,
+  "handle": "henry",
+  "crew": [
+    "hihen"
+  ],
+  "risk": "2",
+  "title": "Centralization risk for privileged functions",
+  "issueId": 50,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/50"
+}
