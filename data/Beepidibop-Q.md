@@ -3,13 +3,15 @@
 ## [L-1] `LendingTermOffboarding`: Using `block.number` to Determine Duration on Multiple Chains
 
 The team expressed interest in deploying the project on multiple L2s, but different L2s have different behaviour for `block.number`. For example, Arbitrum return an approximate L1 block number while OP returns the L2 block number.
+
+![](https://i.imgur.com/VlWrRo5.png)
 ![](https://i.imgur.com/H4HZF6V.png)
 ![](https://i.imgur.com/RQAq2LJ.png)
 ![](https://i.imgur.com/trnLWvM.png)
 
 ### Recommendation
 
-Change `block.number` comparison for `block.timestamp`.
+Change `block.number` comparison to `block.timestamp`.
 
 ### Link To Affected Code
 
