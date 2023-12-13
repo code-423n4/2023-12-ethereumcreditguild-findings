@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Fortify the SurplusGuildMinter contract against potential exploits, specifically in the stake and unstake functions",
+  "issueId": 55,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/55"
+}
