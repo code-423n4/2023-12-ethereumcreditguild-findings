@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "radiken",
+  "risk": "3",
+  "title": "Lack of in-time borrow control under static borrowing limit design",
+  "issueId": 64,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/64"
+}
