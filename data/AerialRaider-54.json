@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Strengthen the security of the getRewards function of the SurplusGuildMinter contract and ensure accurate reward calculation",
+  "issueId": 54,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/54"
+}
