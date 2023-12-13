@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Thembani",
+  "risk": "2",
+  "title": "Vulnerability in transfer and transferFrom that will result in Loss of funds #",
+  "issueId": 68,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/68"
+}
