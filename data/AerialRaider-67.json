@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "3",
+  "title": "making the _addCollateral function in the LendingTerm contract more secure and robust",
+  "issueId": 67,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/67"
+}
