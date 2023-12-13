@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "critical-or-high",
+  "risk": "2",
+  "title": "SurplusGuildMinter.getReward() is susceptible to DoS due to unbounded loop",
+  "issueId": 69,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/69"
+}
