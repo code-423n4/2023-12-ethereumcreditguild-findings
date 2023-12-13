@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xAlix2",
+  "risk": "2",
+  "title": "Any user can solely offboard a lending term if it was onboarded and re-onboarded",
+  "issueId": 60,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/60"
+}
