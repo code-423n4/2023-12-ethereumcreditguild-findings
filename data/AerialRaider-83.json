@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Protect against an attack scenario on grantRole, revokeRole, and renounceRole functions in the Core Contract",
+  "issueId": 83,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/83"
+}
