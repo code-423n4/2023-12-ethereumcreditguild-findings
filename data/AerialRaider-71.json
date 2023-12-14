@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Ensure that repayment process of the _partialRepay function in the LendingTerm contract.",
+  "issueId": 71,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/71"
+}
