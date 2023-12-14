@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Implementing security checks for the setCore(address newCore), pause() and unpause() and emergencyAction(Call[] calldata calls) functions in the CoreRef contract",
+  "issueId": 84,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/84"
+}
