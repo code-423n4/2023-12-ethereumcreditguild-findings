@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "2",
+  "title": "Security checks for the setQuorum, updateTimelock, and _countVote functions in the GuildVetoGovernor contract",
+  "issueId": 98,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/98"
+}
