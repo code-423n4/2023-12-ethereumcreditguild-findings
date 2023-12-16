@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Takarez",
+  "risk": "2",
+  "title": "User exit/claim methods should not have a `whenNotPaused` modifier",
+  "issueId": 113,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/113"
+}
