@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0x_6a70",
+  "risk": "2",
+  "title": "Function `forgive()`  in LendingTerm.sol can be called while a loan is being Auctioned, leading to setAuctionHouse function getting bricked.",
+  "issueId": 125,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/125"
+}
