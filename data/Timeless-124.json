@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Timeless",
+  "risk": "2",
+  "title": "Incorrect `require` check will make the function `_call()` revert each time it is called",
+  "issueId": 124,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/124"
+}
