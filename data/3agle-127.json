@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "3agle",
+  "risk": "2",
+  "title": "A blacklisted borrower address can prevent auction bids from going through in Phase 1",
+  "issueId": 127,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/127"
+}
