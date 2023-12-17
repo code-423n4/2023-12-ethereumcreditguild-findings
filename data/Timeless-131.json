@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Timeless",
+  "risk": "2",
+  "title": "Profit Split of `amountForGuild` in function `notifyPnL`  would be lost, if `_gaugeWeight` returns zero ",
+  "issueId": 131,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/131"
+}
