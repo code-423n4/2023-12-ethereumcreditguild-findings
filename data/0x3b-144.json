@@ -1,8 +1,0 @@
-{
-  "contest": 310,
-  "handle": "0x3b",
-  "risk": "2",
-  "title": "Liquidators can extract extra value with flash loans, significantly reducing profits for other users",
-  "issueId": 144,
-  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/144"
-}
