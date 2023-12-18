@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Byteblockers",
+  "risk": "3",
+  "title": "partialRepay and repay can be sandwiched ",
+  "issueId": 147,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/147"
+}
