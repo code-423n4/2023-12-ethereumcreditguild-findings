@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPsuedoPandit",
+  "risk": "2",
+  "title": "Hardcoded POLL_DURATION_BLOCKS will break logic when deployed on L2s.",
+  "issueId": 142,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/142"
+}
