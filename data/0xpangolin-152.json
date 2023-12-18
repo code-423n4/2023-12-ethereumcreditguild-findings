@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xpangolin",
+  "risk": "2",
+  "title": "Infinite loop in `ERC20Gauges::_decrementWeightUntilFree` when one of the user's gauges has a zero weight",
+  "issueId": 152,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/152"
+}
