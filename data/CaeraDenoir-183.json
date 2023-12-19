@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "CaeraDenoir",
+  "risk": "2",
+  "title": "A borrower can deny the first stage of the auction when it's own collateral is being auctioned if the collateral has hooks on transfer",
+  "issueId": 183,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/183"
+}
