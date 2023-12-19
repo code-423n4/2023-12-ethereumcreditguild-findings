@@ -66,16 +66,3 @@ In `GuildToken::notifyGaugeLoss`, it is not using the RBAC method `CoreRoles Gau
         emit GaugeLoss(gauge, block. Timestamp);
     }
 ```
-=============
-Should just use uint128, dont need upcast waste gas The uint128 type is used to save gas when the maximum value of the variable does not exceed 2^128 - 1. However, when the value is converted to uint256, it will consume more gas because uint256 is larger than uint128 1.
-```diff
-    function _setRateLimitPerSecond(uint128 newRateLimitPerSecond) internal {
-        uint256 oldRateLimitPerSecond = rateLimitPerSecond; //@audit
-        rateLimitPerSecond = newRateLimitPerSecond;
-
-        emit RateLimitPerSecondUpdate(
-            oldRateLimitPerSecond,
-            newRateLimitPerSecond
-        );
-    }
-```
