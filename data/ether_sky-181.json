@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ether_sky",
+  "risk": "2",
+  "title": "The user cannot transfer tokens due to an infinite loop, and gas will be exhausted.",
+  "issueId": 181,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/181"
+}
