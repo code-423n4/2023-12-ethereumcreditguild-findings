@@ -46,3 +46,36 @@ File: src\tokens\ERC20RebaseDistributor.sol::_burn
 ++        ERC20._burn(account, amount-mintAmount);
 
 ```
+
+=======================
+In `GuildToken::notifyGaugeLoss`, it is not using the RBAC method `CoreRoles Gauage_PNL_NOTIFER`. Developers should have the same standard in writing codes.
+```
+//CoreRoles.sol
+    /// @notice can notify of profits & losses in a given gauge
+    bytes32 internal constant GAUGE_PNL_NOTIFIER =
+        keccak256("GAUGE_PNL_NOTIFIER_ROLE");
+```
+
+```diff
+++    function notifyGaugeLoss(address gauge) external onlyCoreRole(CoreRoles.GAUGE_PNL_NOTIFIER){
+--    function notifyGaugeLoss(address gauge) external  {
+--      require(msg.sender == profitManager, "UNAUTHORIZED");
+
+        // save gauge loss
+        lastGaugeLoss[gauge] = block.timestamp;
+        emit GaugeLoss(gauge, block. Timestamp);
+    }
+```
+=============
+Should just use uint128, dont need upcast waste gas The uint128 type is used to save gas when the maximum value of the variable does not exceed 2^128 - 1. However, when the value is converted to uint256, it will consume more gas because uint256 is larger than uint128 1.
+```diff
+    function _setRateLimitPerSecond(uint128 newRateLimitPerSecond) internal {
+        uint256 oldRateLimitPerSecond = rateLimitPerSecond; //@audit
+        rateLimitPerSecond = newRateLimitPerSecond;
+
+        emit RateLimitPerSecondUpdate(
+            oldRateLimitPerSecond,
+            newRateLimitPerSecond
+        );
+    }
+```
