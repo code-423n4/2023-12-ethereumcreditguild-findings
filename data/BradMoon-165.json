@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "BradMoon",
+  "risk": "2",
+  "title": "Unchecked Delegation in ERC20MultiVotes Contract",
+  "issueId": 165,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/165"
+}
