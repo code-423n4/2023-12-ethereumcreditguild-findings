@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "blackpanther",
+  "risk": "2",
+  "title": "Private keys are read from the .env environment variable in the deployment scripts",
+  "issueId": 175,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/175"
+}
