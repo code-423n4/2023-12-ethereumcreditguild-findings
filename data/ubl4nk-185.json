@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ubl4nk",
+  "risk": "3",
+  "title": "A malicious borrower is able to brick the Auction when the collateralToken is ERC777",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/185"
+}
