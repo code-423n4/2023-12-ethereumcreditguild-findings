@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ether_sky",
+  "risk": "2",
+  "title": "Certain rewards may be allocated to the SurplusGuildMinter, but users are unable to claim them.",
+  "issueId": 203,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/203"
+}
