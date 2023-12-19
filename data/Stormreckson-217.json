@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Stormreckson",
+  "risk": "3",
+  "title": "lack of proper `totalSupply` tracking will cause overflow",
+  "issueId": 217,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/217"
+}
