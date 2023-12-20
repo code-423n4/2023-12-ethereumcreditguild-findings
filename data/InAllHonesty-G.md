@@ -35,7 +35,9 @@ By placing the cached SLOAD later in the execution flow, we create a possibility
 
 ## [G-02] `LendingTerm.getLoanDebt()` can be optimized
 
-```
+The `interest` variable can be unpacked into the `loanDebt` because `interest` is used only once in that function.
+
+```diff
         uint256 borrowAmount = loan.borrowAmount;
 --      uint256 interest = (borrowAmount *  //@audit-info GAS unpack interest variable into loanDebt, it's used only once
 --          params.interestRate *
@@ -48,3 +50,28 @@ By placing the cached SLOAD later in the execution flow, we create a possibility
 ```
 
 `Overall gas change: (gas: -32 (-0.004%))`
+
+## [G-03] `SurplusGuildMinter.stake()` can be optimized
+
+By moving the `require(amount >= MIN_STAKE, "SurplusGuildMinter: min stake")` condition before we can save gas in case the amount is < MIN_STAKE, because we don't perform the getRewards() function and the other `require(lastGaugeLoss != block.timestamp, "SurplusGuildMinter: loss in block");`
+
+```diff
+    /// @notice stake CREDIT tokens to start voting in a gauge.
+    function stake(address term, uint256 amount) external whenNotPaused {
+++      require(amount >= MIN_STAKE, "SurplusGuildMinter: min stake");
+        // apply pending rewards
+        (uint256 lastGaugeLoss, UserStake memory userStake, ) = getRewards(
+            msg.sender,
+            term
+        );
+        
+        require(
+            lastGaugeLoss != block.timestamp,
+            "SurplusGuildMinter: loss in block"
+        );
+
+--      require(amount >= MIN_STAKE, "SurplusGuildMinter: min stake");
+
+        // pull CREDIT from user & transfer it to surplus buffer
+        CreditToken(credit).transferFrom(msg.sender, address(this), amount);
+```
