@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Stormreckson",
+  "risk": "2",
+  "title": "Users weight won't be decreased correctly using `<`` when decrementing Guages ",
+  "issueId": 242,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/242"
+}
