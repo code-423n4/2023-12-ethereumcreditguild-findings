@@ -75,6 +75,7 @@ By moving the `require(amount >= MIN_STAKE, "SurplusGuildMinter: min stake")` co
         // pull CREDIT from user & transfer it to surplus buffer
         CreditToken(credit).transferFrom(msg.sender, address(this), amount);
 ```
+`Overall gas change: (gas: -6312 (-1.148%))`
 
 ## [G-04] `LendingTerm._partialRepay` can be optimized
 
