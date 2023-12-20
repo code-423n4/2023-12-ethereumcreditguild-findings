@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "TheSchnilch",
+  "risk": "3",
+  "title": "Unset Variable in validation in getRewards in SurplusGuildMinter leads to incorrect slashing of users",
+  "issueId": 268,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/268"
+}
