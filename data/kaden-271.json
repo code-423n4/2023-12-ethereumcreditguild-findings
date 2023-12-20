@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "3",
+  "title": "GuildToken only has reference to one ProfitManager contract while multiple can exist in the system",
+  "issueId": 271,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/271"
+}
