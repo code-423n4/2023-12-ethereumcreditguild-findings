@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "eeshenggoh",
+  "risk": "3",
+  "title": "Anyone can claimRewards on behalf of other users causing them to get lesser rewards if GaugeProfitIndex increased",
+  "issueId": 223,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/223"
+}
