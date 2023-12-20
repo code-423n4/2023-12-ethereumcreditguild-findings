@@ -101,7 +101,7 @@ The `principal` variable can be unpacked into the `principalRepaid` because `pri
 
 ## [G-05] `SurplusGuildMinter.unstake()` can be optimized
 
-The `userMintRatio` variable is used only once. It can be unpacked into the `guildAmount`
+The `userMintRatio` variable is used only once. It can be unpacked into the `guildAmount` in order to save gas.
 
 ```
 --      uint256 userMintRatio = (uint256(userStake.guild) * 1e18) /
