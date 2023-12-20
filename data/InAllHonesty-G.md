@@ -111,3 +111,41 @@ The `userMintRatio` variable is used only once. It can be unpacked into the `gui
             userStake.credit * amount) 
 ```
 `Overall gas change: (gas: -15 (-0.002%))`
+
+## [G-06] `GuildVetoGovernor.state()` can be optimized
+
+The two checks `status == ProposalState.Pending` and `status == ProposalState.Executed` should be moved before `queueid` is declared, doing so we save gas in case one of the above mentioned checks yields true and the execution ends in one of the return statements.
+
+```
+    function state(
+        uint256 proposalId
+    ) public view override returns (ProposalState) {
+        ProposalState status = super.state(proposalId);
+
+++      // Proposal already executed and stored in state
+++      if (status == ProposalState.Executed) {
+++          return ProposalState.Executed;
+++      }
+++      // Proposal cannot be Canceled because there is no public cancel() function.
+++      // Vote has just been created, still in waiting period
+++      if (status == ProposalState.Pending) {
+++          return ProposalState.Pending;
+
+        bytes32 queueid = _timelockIds[proposalId];
+
+        // @dev all proposals that are in this Governor's state should have been created
+        // by the createVeto() method, and therefore should have _timelockIds set, so this
+        // condition check is an invalid state that should never be reached.
+        assert(queueid != bytes32(0));
+
+--      // Proposal already executed and stored in state
+--      if (status == ProposalState.Executed) {
+--          return ProposalState.Executed;
+--      }
+--      // Proposal cannot be Canceled because there is no public cancel() function.
+--      // Vote has just been created, still in waiting period
+--      if (status == ProposalState.Pending) {
+--          return ProposalState.Pending;
+        }
+
+```
