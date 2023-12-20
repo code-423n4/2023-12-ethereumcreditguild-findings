@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "3",
+  "title": "ERC20RebaseDistributor.updateTotalRebasingShares logic is incorrect, resulting in broken core invariant",
+  "issueId": 260,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/260"
+}
