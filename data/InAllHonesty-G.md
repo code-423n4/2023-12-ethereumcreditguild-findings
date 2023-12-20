@@ -75,3 +75,25 @@ By moving the `require(amount >= MIN_STAKE, "SurplusGuildMinter: min stake")` co
         // pull CREDIT from user & transfer it to surplus buffer
         CreditToken(credit).transferFrom(msg.sender, address(this), amount);
 ```
+
+## [G-04] `LendingTerm._partialRepay` can be optimized
+
+The `principal` variable can be unpacked into the `principalRepaid` because `principal` is used only once in the `_partialRepay` function.
+
+```diff
+        uint256 borrowAmount = loan.borrowAmount;
+        uint256 creditMultiplier = ProfitManager(refs.profitManager)
+            .creditMultiplier();
+--      uint256 principal = (borrowAmount * loan.borrowCreditMultiplier) /
+            creditMultiplier;
+--      uint256 principalRepaid = (principal * percentRepaid) / 1e18;
+++      uint256 principalRepaid = ((borrowAmount * loan.borrowCreditMultiplier) / creditMultiplier) * percentRepaid / 1e18;
+        uint256 interestRepaid = debtToRepay - principalRepaid;
+        uint256 issuanceDecrease = (borrowAmount * percentRepaid) / 1e18;
+        require(
+            principalRepaid != 0 && interestRepaid != 0,
+            "LendingTerm: repay too small"
+        );
+```
+
+`Overall gas change: (gas: -60 (-0.012%))`
