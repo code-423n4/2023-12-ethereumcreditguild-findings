@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "atoko",
+  "risk": "2",
+  "title": "Unable to repay USDC blacklisted user's loan due to transferring the collateral back to user",
+  "issueId": 230,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/230"
+}
