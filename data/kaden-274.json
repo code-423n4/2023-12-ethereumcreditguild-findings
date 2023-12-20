@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "3",
+  "title": "userGaugeProfitIndex is always initially set to 0 (1e18), allowing attackers to drain the ProfitManager",
+  "issueId": 274,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/274"
+}
