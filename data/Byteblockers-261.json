@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Byteblockers",
+  "risk": "2",
+  "title": "Use of  block.number will not work on Base",
+  "issueId": 261,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/261"
+}
