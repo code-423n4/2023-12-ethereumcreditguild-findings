@@ -98,3 +98,16 @@ The `principal` variable can be unpacked into the `principalRepaid` because `pri
 ```
 
 `Overall gas change: (gas: -60 (-0.012%))`
+
+## [G-05] `SurplusGuildMinter.unstake()` can be optimized
+
+The `userMintRatio` variable is used only once. It can be unpacked into the `guildAmount`
+
+```
+--      uint256 userMintRatio = (uint256(userStake.guild) * 1e18) /
+            userStake.credit; /// upcast guild to prevent overflow
+--      uint256 guildAmount = (userMintRatio * amount) / 1e18;
+++      uint256 guildAmount = ((uint256(userStake.guild) * 1e18) /
+            userStake.credit * amount) 
+```
+`Overall gas change: (gas: -15 (-0.002%))`
