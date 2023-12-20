@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "2",
+  "title": "Failure to reference credit multiplier in SurplusGuildMinter staking results in guild voting power obtained from staking requiring less underlying value",
+  "issueId": 275,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/275"
+}
