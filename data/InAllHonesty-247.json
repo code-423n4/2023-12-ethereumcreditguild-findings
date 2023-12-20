@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "InAllHonesty",
+  "risk": "2",
+  "title": "There's a case of precision loss in SurplusGuildMinter::unstake",
+  "issueId": 247,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/247"
+}
