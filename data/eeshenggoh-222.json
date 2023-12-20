@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "eeshenggoh",
+  "risk": "3",
+  "title": "Tokens with more than 18 decimal points will cause issues",
+  "issueId": 222,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/222"
+}
