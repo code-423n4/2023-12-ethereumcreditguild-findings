@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Inference",
+  "risk": "3",
+  "title": "Inherited cancel function allows cancelling veto mechanism",
+  "issueId": 244,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/244"
+}
