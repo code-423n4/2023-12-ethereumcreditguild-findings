@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "2",
+  "title": "SimplePSM can't be used with tokens with >18 decimals",
+  "issueId": 283,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/283"
+}
