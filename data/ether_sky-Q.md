@@ -183,3 +183,29 @@ function notifyPnL() {
 ```
 Hence, any borrower can add weight before repayment, receive `rewards`, and subsequently withdraw their added weight.
 Need a logic similar to rebasing tokens.
+
+[L-10] There is a potential for underflow in the `decreaseUnmintedRebaseRewards` function within the `ERC20RebaseDistributor` token.
+
+When updating shares, we adjust the share price accordingly.
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20RebaseDistributor.sol#L213-L217
+```
+function updateTotalRebasingShares() {
+    uint256 delta = uint256(val.targetValue) - currentRebasingSharePrice;
+    if (delta != 0) {
+        uint256 percentChange = (sharesAfter * START_REBASING_SHARE_PRICE) / sharesBefore;
+        uint256 targetNewSharePrice = currentRebasingSharePrice + (delta * START_REBASING_SHARE_PRICE) / percentChange;
+}
+```
+No need to calculate `percentChange`; the updated price will be as follows:
+```
+targetNewSharePrice = currentRebasingSharePrice + delta * sharesBefore / sharesAfter```
+```
+Due to rounding, the calculated price may be slightly larger. 
+Consequently, when attempting to decrease unminted rewards, there is a risk of underflow.
+```
+function decreaseUnmintedRebaseRewards(uint256 amount) internal {
+    lastValue: SafeCastLib.safeCastTo224(
+        _unmintedRebaseRewards - amount
+    ), // adjusted current
+}
+```
