@@ -1,7 +1,6 @@
 ## Summary
 [I-1] Typo.
 [I-2] `YEAR` is too long.
-[L-1] Unsafe call to decimals().
 
 ### [I-1] Typo.
 
@@ -52,8 +51,3 @@ The constant `YEAR` is set to `31_557_600`. However in one year there are `31_53
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/SurplusGuildMinter.sol#L29
 
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/LendingTerm.sol#L68
-
-### [L-1] Unsafe call to `decimals()`.
-The `decimals` function is optional in the initial ERC20 and might fail for old tokens that do not implement it. Consider using it here as well, also this solution might be helpful: https://github.com/boringcrypto/BoringSolidity/blob/c73ed73afa9273fbce93095ef177513191782254/contracts/libraries/BoringERC20.sol#L49-L55
-
-https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/SimplePSM.sol#L75
