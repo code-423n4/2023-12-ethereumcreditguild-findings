@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "3docSec",
+  "risk": "2",
+  "title": "Rounding errors can cause ERC20RebaseDistributor transfers and mints to fail for underflow",
+  "issueId": 294,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/294"
+}
