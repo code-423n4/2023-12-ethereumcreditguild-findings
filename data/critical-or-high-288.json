@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "critical-or-high",
+  "risk": "3",
+  "title": "Borrower can manipulate auction by adding their address to the collateral token's blacklist",
+  "issueId": 288,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/288"
+}
