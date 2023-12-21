@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "critical-or-high",
+  "risk": "3",
+  "title": "Borrower may redeem Credit tokens in PSM without paying the interest",
+  "issueId": 313,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/313"
+}
