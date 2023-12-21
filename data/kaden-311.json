@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "2",
+  "title": "Can avoid surplus slashing by frontrunning notifyGaugeLoss with unstake",
+  "issueId": 311,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/311"
+}
