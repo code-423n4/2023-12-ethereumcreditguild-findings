@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "3docSec",
+  "risk": "2",
+  "title": "Updates to \"creditMultiplier\" can prevent bidding to pre-existing loan auctions",
+  "issueId": 298,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/298"
+}
