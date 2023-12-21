@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "2",
+  "title": "SurplusGuildMinter users continue to accrue claimable rewards when they should be slashed",
+  "issueId": 316,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/316"
+}
