@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "blackpanther",
+  "risk": "2",
+  "title": "Non-zero Allowance Without Reset in stake function",
+  "issueId": 314,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/314"
+}
