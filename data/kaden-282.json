@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kaden",
+  "risk": "2",
+  "title": "LendingTerm.debtCeiling() fails to include gaugeWeightDelta in totalWeight, resulting in higher debtCeiling, causing `_decrementGaugeWeight` to succeed when it shouldn't ",
+  "issueId": 282,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/282"
+}
