@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "3docSec",
+  "risk": "3",
+  "title": "ProfitManager's \"creditMultiplier\" calculation does not count undistributed rewards; this can cause value losses to users",
+  "issueId": 292,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/292"
+}
