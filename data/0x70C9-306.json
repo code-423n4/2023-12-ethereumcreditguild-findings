@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0x70C9",
+  "risk": "3",
+  "title": "All protocol governance proposal creations can be frontrunned and canceled",
+  "issueId": 306,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/306"
+}
