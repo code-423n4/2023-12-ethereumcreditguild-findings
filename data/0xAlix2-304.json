@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xAlix2",
+  "risk": "3",
+  "title": "Users can abuse transfer/transferFrom and send Credit tokens to themselves, allowing them to steal all other users' rebase shares",
+  "issueId": 304,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/304"
+}
