@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0x70C9",
+  "risk": "2",
+  "title": "Some SimplePSM functions are subject to slippage due to creditMultiplier changes",
+  "issueId": 331,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/331"
+}
