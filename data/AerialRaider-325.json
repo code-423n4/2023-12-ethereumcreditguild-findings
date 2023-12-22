@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AerialRaider",
+  "risk": "3",
+  "title": "Ensuring loanId is not a zero value, requiring that callDebt be greater than zero and adding a requirement that collateralReceived must be greater than zero, in the AuctionHouse contract",
+  "issueId": 325,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/325"
+}
