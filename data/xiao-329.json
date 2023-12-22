@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "xiao",
+  "risk": "2",
+  "title": "Logic error in _setBufferCap() function",
+  "issueId": 329,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/329"
+}
