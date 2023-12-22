@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xfave",
+  "risk": "2",
+  "title": "GuildGovernor.sol#_setQuorum - quorum can be reduced past the minimum _quorum",
+  "issueId": 322,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/322"
+}
