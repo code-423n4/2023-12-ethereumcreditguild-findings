@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Unmanaged Rounding Errors in Rebase Accounting Leading to Unfair Token Distributions",
+  "issueId": 339,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/339"
+}
