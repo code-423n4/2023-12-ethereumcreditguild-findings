@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "nocoder",
+  "risk": "2",
+  "title": "Staking even large amounts of CREDIT in SurplusGuildMinter is blocked by the requirement that the amount exceed MIN_STAKE",
+  "issueId": 382,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/382"
+}
