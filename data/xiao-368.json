@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "xiao",
+  "risk": "2",
+  "title": "The toHexString function in Strings.sol is internal and cannot be called directly in the _checkRole function of the current contract. Strings.toHexString",
+  "issueId": 368,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/368"
+}
