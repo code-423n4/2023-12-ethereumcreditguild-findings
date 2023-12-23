@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Satyam_Sharma",
+  "risk": "3",
+  "title": "`creditAsked` not calculated for the exact end duration timestamp.",
+  "issueId": 366,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/366"
+}
