@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "eeshenggoh",
+  "risk": "3",
+  "title": "Crossbridge signature replay attack is still viable even if nonce is included",
+  "issueId": 352,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/352"
+}
