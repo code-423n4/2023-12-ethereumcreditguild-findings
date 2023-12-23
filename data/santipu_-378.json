@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "santipu_",
+  "risk": "3",
+  "title": "Unfair Slashing of New Stakers in SurplusGuildMinter after Gauge Loss due to Uninitialized Variable",
+  "issueId": 378,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/378"
+}
