@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "santipu_",
+  "risk": "2",
+  "title": "Gauge voters won't be able to decrement some weight on a term when it's the only one on the market",
+  "issueId": 390,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/390"
+}
