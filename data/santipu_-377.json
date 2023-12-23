@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "santipu_",
+  "risk": "3",
+  "title": "Liquidating the last loan on a market with bad debt may lead to blocking all new borrows due to rounding",
+  "issueId": 377,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/377"
+}
