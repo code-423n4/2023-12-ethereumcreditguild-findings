@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "santipu_",
+  "risk": "3",
+  "title": "Gauge voters won’t be slashed if they vote for a term in the same block it accrues bad debt",
+  "issueId": 450,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/450"
+}
