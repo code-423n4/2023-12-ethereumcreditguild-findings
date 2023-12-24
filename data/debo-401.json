@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "debo",
+  "risk": "2",
+  "title": "[M-08] Incorrect strict equality in transfer function of the ERC20RebaseDistributor contract",
+  "issueId": 401,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/401"
+}
