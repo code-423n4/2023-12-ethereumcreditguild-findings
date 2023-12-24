@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "digitizeworx",
+  "risk": "2",
+  "title": "Potential Severe Undercollateralization Vulnerability in LendingTerm Contract due to Incorrect maxDebtPerCollateralToken Initialization",
+  "issueId": 439,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/439"
+}
