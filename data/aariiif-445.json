@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "`_partialRepay()` function does not properly reconcile debt values after discounted repayment, leading to incorrect maintenance of old debt figures.",
+  "issueId": 445,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/445"
+}
