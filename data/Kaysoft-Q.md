@@ -84,6 +84,21 @@ Files:
 
 Recommendation: Group operands with brackets.
 
+## [L-4] Improve _setMaxGauges function efficiency
+In the ` _setMaxGauges `  setter function, there is no need to create another variable just to cache the old value before setting the new value. Instead emit the event earlier before setting the value this way and you will emit the old and new values without creating an extra ` oldMax `  variable just for caching.
+
+```diff
+    function _setMaxGauges(uint256 newMax) internal {
+--     uint256 oldMax = maxGauges;
+++     emit MaxGaugesUpdate(maxGauges, newMax);
+        maxGauges = newMax;
+--      emit MaxGaugesUpdate(oldMax, newMax);
+    }
+```
+File: https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L444C5-L449C6
+
+Recommedation: Emit event first to avoid creating an extra local variable to improve efficiency like in the diff above.
+
 
 
 
