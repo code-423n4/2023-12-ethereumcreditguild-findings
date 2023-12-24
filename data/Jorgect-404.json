@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Jorgect",
+  "risk": "3",
+  "title": "Missing proposalThreshold()  in LendingTermOffboarding ",
+  "issueId": 404,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/404"
+}
