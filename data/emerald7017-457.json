@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "emerald7017",
+  "risk": "2",
+  "title": "Risk of Inaccurate Accounting and Forced Liquidations due to Lack of Validation in `transferFrom` Operation.",
+  "issueId": 457,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/457"
+}
