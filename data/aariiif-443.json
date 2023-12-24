@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "The `onBid()` function does not track debt shortfalls. When an auction bid repays only part of the total debt, the unpaid portion is not recorded, resulting in inaccurate total debt stats, understating losses, and overstating capitalization.",
+  "issueId": 443,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/443"
+}
