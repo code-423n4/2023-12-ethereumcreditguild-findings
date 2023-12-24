@@ -1,0 +1,3 @@
+1.   In the SurplusGuildMinter contract when the governor update the mint ratio the new ratio is only applied to the user when the ``` updateMintRatio ``` is called with the user's address and term. This becomes a problem when the governor decreases the mint ratio, users probably won't want to call the function to decrease their position and keep the old ratio and earn rewards without updating the ratio unless someone else calls the ``` updateMintRatio ``` on their behalf. 
+The protocol can always come in and call it for the user but the function can only be called once for each user so this will result in a very expensive gas. 
+Implement a loop function to update mint ratio for an array of users or automatically implement the new mint ratio for all users.
