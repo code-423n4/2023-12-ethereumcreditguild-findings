@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Stormreckson",
+  "risk": "3",
+  "title": "An attacker can steal any user voting power by using `delegateBySig`",
+  "issueId": 452,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/452"
+}
