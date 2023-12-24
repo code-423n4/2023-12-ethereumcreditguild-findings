@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Token balances are not verified before disbursal, enabling attackers to exploit the rebasing token logic, artificially inflate balances, and receive unearned yield payments.",
+  "issueId": 446,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/446"
+}
