@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Conversions lack robust input validation, allowing attackers to manipulate variables in key rebasing functions and artificially reduce their perceived debt.",
+  "issueId": 444,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/444"
+}
