@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "digitizeworx",
+  "risk": "2",
+  "title": "Potential Governance-Driven Exploit: Malicious Collateral Upgradability Allows Prevention of Bad Debt Realization",
+  "issueId": 440,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/440"
+}
