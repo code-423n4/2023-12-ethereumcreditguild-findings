@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "nocoder",
+  "risk": "3",
+  "title": "A malicious user can enter rebase with their CREDIT and then redeem their credit but continue earning rebase rewards indefinitely",
+  "issueId": 453,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/453"
+}
