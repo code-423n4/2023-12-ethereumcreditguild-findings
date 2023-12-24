@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Stormreckson",
+  "risk": "2",
+  "title": "Partial payment can't be made if a user borrows exactly `minBorrow` or a little bit above `minBorrow` ",
+  "issueId": 403,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/403"
+}
