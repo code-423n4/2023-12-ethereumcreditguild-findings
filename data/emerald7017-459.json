@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "emerald7017",
+  "risk": "2",
+  "title": "Invalid Validation in createTerm Function Allows Bypass of Collateral Validation via Non-existent Contract Addresses",
+  "issueId": 459,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/459"
+}
