@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "hals",
+  "risk": "2",
+  "title": "`GuildVetoGovernor` contract: changing the `timelock` will result in some vetoed proposals not being executed or wrong proposals being cancelled",
+  "issueId": 522,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/522"
+}
