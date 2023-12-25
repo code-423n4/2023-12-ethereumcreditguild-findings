@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "JCN",
+  "risk": "2",
+  "title": "Funds from the PSM can be used to create multiple loans at a low cost to the borrower (subject only to gas fees/slippage), resulting in the value of the PSM funds being locked in the term until governance action is taken",
+  "issueId": 479,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/479"
+}
