@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xDemon",
+  "risk": "2",
+  "title": "If one of the external call function fail it may cause Dos and rewards locked for a period time",
+  "issueId": 465,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/465"
+}
