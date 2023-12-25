@@ -74,6 +74,40 @@ In the ` _setMaxGauges `  setter function, there is no need to create another va
 Recommedation: Emit event first to avoid creating an extra local variable to improve efficiency like in the diff above.
 
 
+## [L-4] Unnecessary casting of uint256 variable with uint256() explicit cast function.
 
+There are 2 insteances of this
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/GuildToken.sol#L154
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/GuildToken.sol#L158
+
+Since the ` _userGaugeWeight `   is already declared as a ` uint256 `  so there is no need to cast it to ` uint256 `  again with the ` uint256(...) `   explicit cast function as done in the code.
+On line 143 in the code below,  ` _userGaugeWeight `   is already declared as a ` uint256 _userGaugeWeight `
+
+```
+File: GuildToken.sol
+133:    function applyGaugeLoss(address gauge, address who) external {
+            ...
+142:        // read user weight allocated to the lossy gauge
+143:        uint256 _userGaugeWeight = getUserGaugeWeight[who][gauge];
+144:
+145:         // remove gauge weight allocation
+146:        lastGaugeLossApplied[gauge][who] = block.timestamp;
+147:        _decrementGaugeWeight(who, gauge, _userGaugeWeight);
+148:        if (!_deprecatedGauges.contains(gauge)) {
+149:            totalTypeWeight[gaugeType[gauge]] -= _userGaugeWeight;
+150:            totalWeight -= _userGaugeWeight;
+151:        }
+152:
+153:        // apply loss
+154:        _burn(who, uint256(_userGaugeWeight));//@audit unnecessary uint256 cast
+155:        emit GaugeLossApply(
+156:            gauge,
+157:            who,
+158:            uint256(_userGaugeWeight),//@audit unnecessary uint256 cast
+159:            block.timestamp
+160:        );
+161:    }
+```
+Recommendation: Remove the uint256(...) cast function on the ` _userGaugeWeight `  variable.
 
 
