@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "JCN",
+  "risk": "2",
+  "title": "The first borrower is able to borrow the full debt allocation of a system despite the full debt allocation being divided amongst multiple gauges",
+  "issueId": 477,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/477"
+}
