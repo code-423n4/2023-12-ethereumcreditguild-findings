@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "JCN",
+  "risk": "2",
+  "title": "Over 90% of the Guild staked in a gauge can be unstaked, despite the gauge utilizing its full debt allocation",
+  "issueId": 475,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/475"
+}
