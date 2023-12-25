@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "DanielArmstrong",
+  "risk": "3",
+  "title": "An attacker can clean up a term more than twice, so he can redeem funds maliciously and a legitimate term can become impossible to be cleaned up.",
+  "issueId": 508,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/508"
+}
