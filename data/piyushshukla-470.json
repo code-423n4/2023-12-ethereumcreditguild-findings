@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "piyushshukla",
+  "risk": "2",
+  "title": "Unchecked ERC20 transfers can cause lock up",
+  "issueId": 470,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/470"
+}
