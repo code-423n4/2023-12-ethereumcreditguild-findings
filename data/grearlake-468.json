@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "grearlake",
+  "risk": "3",
+  "title": "Bad formula in calculating credit multiplier lead to race condition of lenders in withdrawing peg token",
+  "issueId": 468,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/468"
+}
