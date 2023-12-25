@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "iamandreiski",
+  "risk": "3",
+  "title": "Calling multiple loans after a gauge is offboarded can result in a state of DoS for the whole market",
+  "issueId": 510,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/510"
+}
