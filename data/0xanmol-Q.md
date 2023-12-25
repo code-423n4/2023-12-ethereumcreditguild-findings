@@ -16,4 +16,44 @@ Let's consider the scenario where the team decides to add a new market for WETH:
 
 To address this issue, it is recommended to make `minStake` an immutable variable and set the feasible minimum stake amount when deploying the contract.
 
+## [L-2] `NotifyPnL` is not checking if the loss == _surplusBuffer
+
+### Code Line
+
+https://github.com/volt-protocol/ethereum-credit-guild/blob/4d33abf95fee69391af0652e3cbe5e0cffa25f9f/src/governance/ProfitManager.sol#L315
+
+### Details
+
+When the gauge receives notification of a loss, it verifies whether the loss is smaller than the _surplusBuffer and if it can be covered by the _surplusBuffer amount. However, if the `_surplusBuffer == loss`, instead of covering the entire loss, the code mistakenly proceeds to the else statement where it attempts to decrease the `creditMultiplier`. This is unnecessary and inefficient.
+
+### Recommendation
+
+Instead of solely checking if the loss is < _surplusBuffer, it should also verify if it is equal to _surplusBuffer by using loss ≤ _surplusBuffer.
+
+
+
+``````````````diff
+- if (loss < _surplusBuffer){
++ if (loss <= _surplusBuffer){
+
+                // deplete the surplus buffer
+                surplusBuffer = _surplusBuffer - loss;
+                emit SurplusBufferUpdate(
+                    block.timestamp,
+                    _surplusBuffer - loss
+                );
+                CreditToken(_credit).burn(loss);
+            } else {
+                // empty the surplus buffer
+                loss -= _surplusBuffer;
+                surplusBuffer = 0;
+                CreditToken(_credit).burn(_surplusBuffer);
+                emit SurplusBufferUpdate(block.timestamp, 0);
+
+                // update the CREDIT multiplier
+                uint256 creditTotalSupply = CreditToken(_credit).totalSupply();
+                uint256 newCreditMultiplier = (creditMultiplier *
+                    (creditTotalSupply - loss)) / creditTotalSupply;
+                creditMultiplier = newCreditMultiplier;
+````
 
