@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "DarkTower",
+  "risk": "2",
+  "title": "ECG Proposals can be griefed by front-running and cancelations",
+  "issueId": 506,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/506"
+}
