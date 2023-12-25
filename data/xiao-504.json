@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "xiao",
+  "risk": "2",
+  "title": "The _incrementDelegation function does not limit the parameter amuont>0, which will cause any user to perform a DoS attack",
+  "issueId": 504,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/504"
+}
