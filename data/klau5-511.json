@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "klau5",
+  "risk": "2",
+  "title": "Voting feature will not work properly for Arbitrum due to block.number",
+  "issueId": 511,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/511"
+}
