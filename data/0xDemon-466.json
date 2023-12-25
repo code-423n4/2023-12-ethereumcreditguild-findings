@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xDemon",
+  "risk": "3",
+  "title": "Borrower loan can’t be called to AuctionHouse for a period of time, even if the borrower does not pay any repayment",
+  "issueId": 466,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/466"
+}
