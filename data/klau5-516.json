@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "klau5",
+  "risk": "2",
+  "title": "The hardcoded value causes the voting period or poll duration to be shorter than intended at L2",
+  "issueId": 516,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/516"
+}
