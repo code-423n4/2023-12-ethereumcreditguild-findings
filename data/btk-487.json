@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "btk",
+  "risk": "2",
+  "title": "Block.number behave diffrently on L2s & Ethereum block time is 12 s, not 13s",
+  "issueId": 487,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/487"
+}
