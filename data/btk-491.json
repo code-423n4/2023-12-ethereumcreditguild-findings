@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "btk",
+  "risk": "2",
+  "title": "An attacker can cause slashing to SurplusGuildMinter user's and liquidation to LendingTerm user's at no cost but gas",
+  "issueId": 491,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/491"
+}
