@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "LendingTermOffboarding uses wrong constant POLL_DURATION_BLOCKS",
+  "issueId": 554,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/554"
+}
