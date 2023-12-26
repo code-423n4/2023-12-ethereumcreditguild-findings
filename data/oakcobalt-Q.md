@@ -66,6 +66,25 @@ Recommendations:
 In `supportOffboard()` , consider adding a require statement to check `canOffboard[term] `  to be false. For example: Add  `require(canOffboard[term] == false)`.
 This prevents already approved poll (quorum reached) to be voted again.
 
+### Low-03: `getRoleAdmin()`  is not overridden as other public functions, and will always return 0 bytes value. Consider overriding `getRoleAdmin()`  implementation to void the implementation.
+
+GuildTimelockController.sol overwrites openzeppelin's TimelockController.sol which overwrites AccessControl.sol.  GuildTimelockController.sol overwrites the role access check to use `hasRole()`  and state variables stored in Core.sol. 
+
+However, not all role access functions from openzeppelin's TimelockController.sol are overwritten.
+
+ `getRoleAdmin()`   from AccessControl.sol, is not overwritten in GuildTimelockController.sol.  And  `getRoleAdmin()`   is a public function, is publicly available in GuildTimelockController.sol.  When a user calls  `getRoleAdmin()` , the `_roles[role]` from AccessControl.sol will be called.  But since `_roles[role]`  storage from AccessControl.sol is not meant to be used,  `getRoleAdmin()`  will always return zero address.
+
+
+
+
+
+
+
+ 
+
+
+
+
 ### NC-01: Incomplete comment.  AccessControlEnumerable also has a public `supportsInterface()`  function
 
 In src/core/Core.sol,  there is a comment listing all the functions available in AccessControl.sol. But the comment is missing `supportsInterface()` function.
