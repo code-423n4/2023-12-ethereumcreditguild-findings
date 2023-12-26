@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xanmol",
+  "risk": "2",
+  "title": "`SurplusGuildMinter:unstake` doesn’t take rebasing rewards into account, resulting in the loss of the user’s rebasing rewards",
+  "issueId": 542,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/542"
+}
