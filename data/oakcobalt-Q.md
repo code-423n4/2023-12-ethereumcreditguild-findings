@@ -3,20 +3,19 @@ In src/core/Core.sol,  at the time of deployment, key governor roles are granted
 
 In the case of, a deployer key compromised or oversight during the `renounceRole()`  process, the key governor role account is at risk of being deleted to `address(0)`.
 
-```
+```solidity
     function renounceRole(bytes32 role, address account) public virtual override {
         require(account == _msgSender(), "AccessControl: can only renounce roles for self");
         _revokeRole(role, account);
     }
-`
-`
+```
+```solidity
     function _revokeRole(bytes32 role, address account) internal virtual {
         if (hasRole(role, account)) {
 |>         _roles[role].members[account] = false;
             emit RoleRevoked(role, account, _msgSender());
         }
 ```
-
 Recommendations:
 
 Consider In `renounceRole(`), also check the member count for a role through `getRoleMemberCount()`. and ensure the count is greater than 1. 
@@ -25,7 +24,7 @@ Consider In `renounceRole(`), also check the member count for a role through `ge
 
 In src/governance/LendingTermOffboarding.sol- `supportOffboard()`, users can vote to offboard a lending term. However, when a quorum is already reached before the poll expires, a user can still vote through `supportOffboard()`.  The transaction will go through and the state variable will be re-written to the same state as before, leading to user waste gas.
 
-```
+```solidity
     function supportOffboard(
         uint256 snapshotBlock,
         address term
@@ -59,9 +58,13 @@ In src/governance/LendingTermOffboarding.sol- `supportOffboard()`, users can vot
         );
     }
 ```
+As seen above, note that in `supportOffboard()`  require statements only ensure that (1) the poll hasn't expired; (2) the poll is valid; (3) the user hasn't voted before for the poll. 
 
+If the quorum for the poll is already reached `if (_weight + userWeight >= quorum)`  evaluates to true, then `canOffboard[term] = true;` .  However, if `canOffboard[term] ` is already true, `supportOffboard()`  will not check if the poll's quorum is already reached. And if the poll has not expired, the user will be able to continuously vote and `canOffboard[term] ` will be re-written to true. This is a wasteful operation and adding user weights after the term is already approved to be true doesn't matter for the state of the poll.
 
-
+Recommendations:
+In `supportOffboard()` , consider adding a require statement to check `canOffboard[term] `  to be false. For example: Add  `require(canOffboard[term] == false)`.
+This prevents already approved poll (quorum reached) to be voted again.
 
 ### NC-01: Incomplete comment.  AccessControlEnumerable also has a public `supportsInterface()`  function
 
