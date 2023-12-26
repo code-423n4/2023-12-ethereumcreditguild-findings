@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "Malicious actor can increment gauge votes in the same block as the profit is notified, enabling them to get rewards without being at risk of slashing",
+  "issueId": 624,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/624"
+}
