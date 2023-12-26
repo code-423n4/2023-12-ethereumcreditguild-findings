@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "HighDuty",
+  "risk": "3",
+  "title": " AuctionHouse.getBidDetail() - Malicious actor can intentionally slash any successful term GUILD holders.",
+  "issueId": 599,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/599"
+}
