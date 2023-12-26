@@ -1,0 +1,3 @@
+- Suggest emit setHardCap Event. and also setAuctionHouse event.
+- In CoreRef::emergencyAction(), we will execute some low level call, send some ether to targets, We need to add some check whether received ETHER amount can cover all ETHER amount sent to targets.
+- Suggest emit canOffboard event if support votes pass quorum.
