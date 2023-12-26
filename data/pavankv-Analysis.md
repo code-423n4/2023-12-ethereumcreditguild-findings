@@ -359,6 +359,17 @@ Recommendation
 ```
 The above recommendation will slashed even `lastGaugeLoss` is equvivalent to `userStake.lastGaugeLoss`.
 
+4. Add a mechanism to Lending term if partial repayment is allowed then has to pay with minimum amount . If partial repayment is not required then borrwer has to be repayment full .In below POC code snippet you can see  `minPartialRepayPercent` set as zero means partial repayment has no size it would allows borrowers to pay as little as they want and considered as partial repayment and function `partialRepayDelayPassed()` doesn't give true because borrwer already paying partial amount and loan cannot be called for auction also.
+
+Recommendation:-
+
+Implement mechaism before creating the term whether the partial repayment to be allowed or not by adding boolean data type. If partial repayement is true then `minPartialRepayPercent` has to be minimum value while intialising the term.
+
+POC link :-
+https://github.com/pavankv241/BlockChain-in-Banking-Sector/blob/main/POCECG.sol
+
+Paste the above POC in LendingTerm.t.sol file.
+
 
 
 
@@ -379,8 +390,6 @@ Highlights of the report
 3.Comparison table with other competitive protocol 
 
 4.Best recommendation which could safely implemented.
-
-
 
 ### Time spent:
 87 hours
