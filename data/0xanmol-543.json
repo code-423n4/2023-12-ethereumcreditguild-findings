@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xanmol",
+  "risk": "2",
+  "title": "User can still borrow after the loss is incurred in a gauge.",
+  "issueId": 543,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/543"
+}
