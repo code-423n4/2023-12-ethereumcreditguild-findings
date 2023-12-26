@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "klau5",
+  "risk": "2",
+  "title": "The lack of counter-veto about veto allows to veto with a small number of votes, which can lead to DoS of governance",
+  "issueId": 576,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/576"
+}
