@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "If a term has been removed and then added again, an attacker can remove it again (`````LendingTermOffboarding::offBoard`) without having to propose or vote again, even without having a vote",
+  "issueId": 626,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/626"
+}
