@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "`SimplePSM::redeem()` does not provide protection against slippage, which could lead to the loss of value",
+  "issueId": 623,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/623"
+}
