@@ -16,4 +16,6 @@ In the case of, a deployer key compromised or oversight during the `renounceRole
             emit RoleRevoked(role, account, _msgSender());
         }
 `
-As seen above, when there are no roles granted 
+Recommendations:
+Consider In `renounceRole(`), also check the member count for a role through `getRoleMemberCount()`. and ensure the count is greater than 1. 
+
