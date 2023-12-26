@@ -16,7 +16,23 @@ In the case of, a deployer key compromised or oversight during the `renounceRole
             emit RoleRevoked(role, account, _msgSender());
         }
 `
+
 Recommendations:
 
 Consider In `renounceRole(`), also check the member count for a role through `getRoleMemberCount()`. and ensure the count is greater than 1. 
+
+### NC-01: Incomplete comment.  AccessControlEnumerable also has a public `supportsInterface()`  function
+
+In src/core/Core.sol,  there is a comment listing all the functions available in AccessControl.sol. But the comment is missing `supportsInterface()` function.
+
+``    // AccessControlEnumerable is AccessControl, and also has the following functions :
+    // hasRole(bytes32 role, address account) -> bool
+    // getRoleAdmin(bytes32 role) -> bytes32
+    // grantRole(bytes32 role, address account)
+    // revokeRole(bytes32 role, address account)
+    // renounceRole(bytes32 role, address account)
+`
+
+Recommendations:
+Add `supportsInterface(bytes4 interfaceId)->bool`  in the comment.
 
