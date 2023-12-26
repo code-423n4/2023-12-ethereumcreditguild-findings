@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SpicyMeatball",
+  "risk": "2",
+  "title": "Infinite loop in ERC20Gauges.sol if one of the user's gauges has a zero weight",
+  "issueId": 547,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/547"
+}
