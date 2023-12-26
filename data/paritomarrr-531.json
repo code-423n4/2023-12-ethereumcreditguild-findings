@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "paritomarrr",
+  "risk": "2",
+  "title": "Add Access control for `LendingTerm::initialize()`to Prevent Unauthorized Initialization",
+  "issueId": 531,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/531"
+}
