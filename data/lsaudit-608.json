@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "Function `stake()` does not verify if user is slashed",
+  "issueId": 608,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/608"
+}
