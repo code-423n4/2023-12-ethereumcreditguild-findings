@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "HighDuty",
+  "risk": "3",
+  "title": "Users can steal other users rewards by allocating weight  to gauges after `notifyPnL` with positive impact",
+  "issueId": 589,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/589"
+}
