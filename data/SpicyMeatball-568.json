@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SpicyMeatball",
+  "risk": "2",
+  "title": "Calling decreaseGaugeWeight on deprecated gauge may result in division by zero",
+  "issueId": 568,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/568"
+}
