@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "HighDuty",
+  "risk": "3",
+  "title": "Malicious guild participant could front-run any lending term proposal and cancel it, so the term is unable to be included and used",
+  "issueId": 588,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/588"
+}
