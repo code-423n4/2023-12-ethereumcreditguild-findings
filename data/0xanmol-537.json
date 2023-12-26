@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xanmol",
+  "risk": "2",
+  "title": "Guild tokens cannot be used for multiple markets because of single `profitManager`",
+  "issueId": 537,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/537"
+}
