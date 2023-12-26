@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "The `LendingTerm::openingFee` may be charged multiple times, resulting in the borrower paying more fees than necessary",
+  "issueId": 618,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/618"
+}
