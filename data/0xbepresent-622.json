@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "In the `ProfitManager` contract, the credit token reward will not be assigned if there are no voters for the gauge that receives rewards",
+  "issueId": 622,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/622"
+}
