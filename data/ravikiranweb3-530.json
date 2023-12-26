@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ravikiranweb3",
+  "risk": "2",
+  "title": "### CoreRef::emergencyAction    The function does not check for target to be non zero address.",
+  "issueId": 530,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/530"
+}
