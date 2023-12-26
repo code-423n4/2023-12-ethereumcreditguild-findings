@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPsuedoPandit",
+  "risk": "2",
+  "title": "ProfitManager::claimGaugeRewards can be called even if the user's weight remains unchanged in the gauge.",
+  "issueId": 536,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/536"
+}
