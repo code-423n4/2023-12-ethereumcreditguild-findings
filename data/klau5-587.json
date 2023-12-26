@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "klau5",
+  "risk": "3",
+  "title": "getRewards - Once a lending term has loss, all new stakers after loss will be slashed and lose their staked token",
+  "issueId": 587,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/587"
+}
