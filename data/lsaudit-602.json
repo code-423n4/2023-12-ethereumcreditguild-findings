@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "Lack of access control on `createTerm()` in `LendingTermOnboarding.sol`",
+  "issueId": 602,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/602"
+}
