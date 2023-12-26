@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "When loan repayment occurs, the amount reported to `RateLimitedMinter::replenishBuffer()` may be erroneous, causing an accelerated `bufferStored` growth",
+  "issueId": 625,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/625"
+}
