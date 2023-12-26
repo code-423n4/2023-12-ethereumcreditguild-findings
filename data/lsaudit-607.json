@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "It's possible to donate to surplus buffer of a non-existing term",
+  "issueId": 607,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/607"
+}
