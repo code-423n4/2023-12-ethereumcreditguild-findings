@@ -110,4 +110,29 @@ File: GuildToken.sol
 ```
 Recommendation: Remove the uint256(...) cast function on the ` _userGaugeWeight `  variable.
 
+## [L-5] Many contracts inherit from Pausable through the CoreRef base contract but did not add ` whenNotPaused `  to their critical functions.
+
+There are 4 instances of these:
+File: 
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/core/CoreRef.sol#L12
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/CreditToken.sol#L18C1-L19C13
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/GuildToken.sol#L37
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/GuildVetoGovernor.sol#L25
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/ProfitManager.sol#L30
+
+When a contract inherits from the Pausable contract and implements the ` pause() `  and ` unpause() `  functions, it means the contract can be paused.
+
+However there are many functions that inherit the Pauseable contract just by inheriting the CoreRef.sol contract.
+The CoreRef.sol contract implements the Pauseable mechanism by implementing the necessary ` pause() `  and ` unpause() `  functions.
+
+All contracts that inherit from the CoreRef base contract automatically implements the Pauseable security mechanism and also have the pause and unpause functions.
+
+The issue is that some of these contracts that implement Pauseable feature through the CoreRef.sol parent contract do not add the ` whenNotPaused `  modifier to critical functions especially functions that update state. 
+For example the CreditToken.sol automatically have the Pauseable feature with the pause and unpause functions but when the contract is paused, transfers can still be made.
+
+Recommendation: Only implement the Pauseable feature on contracts that are meant to be Pauseable and add the ` whenNotPaused `  modifier to critical user functions of the ` pauseable contracts ` .
+
+
+
+
 
