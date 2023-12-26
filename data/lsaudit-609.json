@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "Function `_mint()` from `ERC20RebaseDistributor.sol` mints tokens before exiting rebasing first",
+  "issueId": 609,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/609"
+}
