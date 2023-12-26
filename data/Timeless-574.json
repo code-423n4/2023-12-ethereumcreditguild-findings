@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Timeless",
+  "risk": "2",
+  "title": "Function `updateMintRatio()` incorrectly calls increment/decrement Gauges in the context of `SurplusGuildMinter` contract ",
+  "issueId": 574,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/574"
+}
