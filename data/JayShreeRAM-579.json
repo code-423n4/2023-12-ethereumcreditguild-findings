@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "JayShreeRAM",
+  "risk": "2",
+  "title": "Potential Inconsistency in Gauge Allocation Limits Due to Decreasing maxGauges",
+  "issueId": 579,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/579"
+}
