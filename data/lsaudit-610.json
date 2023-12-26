@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "`claimGaugeRewards()` can be called on behalf of other users",
+  "issueId": 610,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/610"
+}
