@@ -1,8 +1,0 @@
-{
-  "contest": 310,
-  "handle": "nmirchev8",
-  "risk": "2",
-  "title": "SurplusGuildMinter define MIN_STAKE constant to 1e18, which is large amount for minimum, if protocol wants to support gWETH",
-  "issueId": 597,
-  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/597"
-}
