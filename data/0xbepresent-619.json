@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "There are not incentives in place for the bidder/caller to invoke the `AuctionHouse::forgive()` function",
+  "issueId": 619,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/619"
+}
