@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SpicyMeatball",
+  "risk": "3",
+  "title": "User can avoid losing his Guild tokens by moving them out of the gauge before notifyLoss is called",
+  "issueId": 582,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/582"
+}
