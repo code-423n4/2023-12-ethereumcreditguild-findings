@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "Function `cleanup()` will revert when term will be offboarded in a different way than by calling `offboard()` function",
+  "issueId": 598,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/598"
+}
