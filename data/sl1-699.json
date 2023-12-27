@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "sl1",
+  "risk": "3",
+  "title": "If a user increments gaugeWeight after notifyPnL and profit disitribution, he will receive rewards he is not entitled to.",
+  "issueId": 699,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/699"
+}
