@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "xeros",
+  "risk": "3",
+  "title": "Change in creditMultiplier can lead to DoS in first phase of auction",
+  "issueId": 679,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/679"
+}
