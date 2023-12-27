@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Dudex_2004",
+  "risk": "3",
+  "title": "addCollateral do not prevent a loan from getting called or liquidate",
+  "issueId": 656,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/656"
+}
