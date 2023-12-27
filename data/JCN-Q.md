@@ -82,7 +82,7 @@ Similarly, stakers can avoid being slashed by immediately unstaking all their Gu
 ### Impact
 Users can frontrun `gainy notifyPnL` calls to collect rewards for a gauge that will experience a profit. This will result in all other stakers' rewards being diluted. The user is able to do this despite their total time staked in the gauge being `0` (staked into gauge during the same block as profit). Additionally, the user is able to benefit from the reward system while taking on `zero-risk`. 
 
-Users can frontrun `lossy notifyPnL` calls to avoid being slashed. Since slashing is total, a loss of `1 wei` will be as devastating to a staker as a loss of `1_000e18`. Therefore, users are incentivized to actively try to avoid these losses by unstaking all of their Guild immediately before the gauge experiences a loss. Note that in a single gauge system all the Guild, except for `1 wei`, is able to be unstaked without complications (assuming the `issuance` is not at the `debt ceiling`). However, for multi-gauge systems, user's who unstake will have to be sure the adjusted debt ceiling (after unstaking) does not fall below the `issuance` for the gauge, or else the user will not be allowed to unstake their Guild.  
+Users can frontrun `lossy notifyPnL` calls to avoid being slashed. Since slashing is total, a loss of `1 wei` will be as devastating to a staker as a loss of `1_000e18`. Therefore, users are incentivized to actively try to avoid these losses by unstaking all of their Guild immediately before the gauge experiences a loss. User's who unstake will have to be sure the adjusted debt ceiling (after unstaking) does not fall below the `issuance` for the gauge, or else the user will not be allowed to unstake their Guild.  
 
 ### Proof of Concept
 
