@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "nonseodion",
+  "risk": "3",
+  "title": "Anyone can deprecate a guage and call all its loans when it is offboarded by LendingTermOffboarding and reonboarded before cleanup.",
+  "issueId": 697,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/697"
+}
