@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Mike_Bello90",
+  "risk": "2",
+  "title": "Bug: Any User can Initialize a Lending Term Clon Front-Running the Protocol initialization call.",
+  "issueId": 777,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/777"
+}
