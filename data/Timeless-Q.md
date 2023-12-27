@@ -1,10 +1,8 @@
 
-
-
 ## [LOW-01] Incorrect number of seconds in POLL_DURATION_BLOCKS variable 
 
 
-## IMPACT
+## Impact
 In the contract `LendingTermOffboarding.sol` , there is a state variable named `POLL_DURATION_BLOCKS` i.e. 
 
 ```
@@ -33,7 +31,7 @@ https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/LendingTermOffboarding.sol#L120-L123
 
 
-## MITIGATION
+## Recommended Mitigation Steps
 Consider making the appropriate changes i.e. set the `POLL_DURATION_BLOCKS` to 50,400 
 
 
@@ -41,11 +39,12 @@ Consider making the appropriate changes i.e. set the `POLL_DURATION_BLOCKS` to 5
 
 ## [LOW-02] Decreasing maxGauges does not account for `users` previous Gauge list size
 
+## Description
 `ERC20Gauges` contract has a `maxGauges` state variable meant to represent the maximum amount of gauges a user can allocate to. 
 As per the natspec, it is meant to protect against gas DOS attacks upon token transfer to allow complicated transactions to fit in a block. There is also a function `setMaxGauges` for authorized users to decrease or increase this state variable.
 
-## Proof of Concept
 
+## Proof of Concept
 `# Function _incrementGaugeWeight`
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L236
 
@@ -69,4 +68,52 @@ While in the current contract logic this does not cause issues, `maxGauges` is
 
 ## Recommended Mitigation Steps
 Either document the potential discrepancy between the user gauges size and the `maxGauges` state variable, or limit `maxGauges` to be only called within the contract thereby forcing other contracts to retrieve user gauge list size through `_userGauges[user].length()`
+
+
+## [LOW-03] Incorrect changes to the function `_setCanExceedMaxGauges` in contract `ERC20Gauges`
+
+## Description: 
+
+In the contract `ERC20Gauges.sol`  
+In the comments, the @dev mentions in beginning that, 
+**ECG made the following changes to the original flywheel-v2 version:**
+One of the **changes** to be made is: 
+
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L42-L45
+```
+- Remove public setContractExceedMaxGauges(address, bool) requiresAuth method
+    ... Add internal _setCanExceedMaxGauges(address, bool) method
+     ... Remove check of "target address has nonzero code size"
+    ... Rename to remove "contract" from name because we don't check if target is a contract
+    
+```
+
+It seems the intention here is: 
+To remove the require check, because in the subsequent line it is mentioned `because we don't check if target is a contract`. 
+Meaning, we don't want to check whether the address(parameter) is a contract or not. So, that would mean, we should NOT include the require check. 
+
+
+However, in the function `_setCanExceedMaxGauges`, the require check still exists i.e. 
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L451-L466
+
+```
+function _setCanExceedMaxGauges(
+        address account,
+        bool canExceedMax
+    ) internal {
+        if (canExceedMax) {
+        
+            require(
+                account.code.length != 0,
+                "ERC20Gauges: not a smart contract"
+            );  // This require check should be removed  
+        }
+
+```
+
+This would lead to undesired behavior. Attempting to set whether an Externally Owned Account (EOA) could exceed the Max Gauges limit would result in this check failing each time it is called. 
+
+## Recommended Mitigation Steps
+Consider removing the given require statement.
+
 
