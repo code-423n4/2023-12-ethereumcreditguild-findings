@@ -30,9 +30,7 @@ When the gauge receives notification of a loss, it verifies whether the loss is 
 
 Instead of solely checking if the loss is < _surplusBuffer, it should also verify if it is equal to _surplusBuffer by using loss ≤ _surplusBuffer.
 
-
-
-``````````````diff
+```diff
 - if (loss < _surplusBuffer){
 + if (loss <= _surplusBuffer){
 
@@ -55,5 +53,39 @@ Instead of solely checking if the loss is < _surplusBuffer, it should also verif
                 uint256 newCreditMultiplier = (creditMultiplier *
                     (creditTotalSupply - loss)) / creditTotalSupply;
                 creditMultiplier = newCreditMultiplier;
-````
+```
+## [L-3]  `partialRepayDelayPassed` should return true if the term is offboarded.
+
+### Code Line
+
+https://github.com/volt-protocol/ethereum-credit-guild/blob/4d33abf95fee69391af0652e3cbe5e0cffa25f9f/src/loan/LendingTerm.sol#L237
+
+### Details
+
+The variable `LendingTerm:partialRepayDelayPassed` is used to check whether the partial repayment deadline for a loan has passed or not. It returns "true" if the deadline has passed, and "false" if it hasn't.
+
+If the term is offboarded, it becomes callable and doesn't need the partial repayment delay to pass. In this case, the variable can return "true" even if the repayment period hasn't passed yet. This is done to prevent any potential errors when the protocol interacts with this term.
+
+```diff
+function partialRepayDelayPassed(
+        bytes32 loanId
+    ) public view returns (bool) {
+        // if no periodic partial repays are expected, always return false
+        if (params.maxDelayBetweenPartialRepay == 0) return false;
+
+        // if loan doesn't exist, return false
+        if (loans[loanId].borrowTime == 0) return false;
+
+        // if loan is closed, return false
+        if (loans[loanId].closeTime != 0) return false;
+
++ if(GuildToken(refs.guildToken).isDeprecatedGauge(address(this)) return true;
+        // return true if delay is passed
+        return
+            lastPartialRepay[loanId] <
+            block.timestamp - params.maxDelayBetweenPartialRepay;
+    }
+```
+
+
 
