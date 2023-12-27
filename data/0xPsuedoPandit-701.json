@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPsuedoPandit",
+  "risk": "2",
+  "title": "GuildToken :: addGauge allows to add gauges even if it has exceeded the maximum limit",
+  "issueId": 701,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/701"
+}
