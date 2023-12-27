@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "Gauge weight is calculated incorrectly when gauge is deprecated",
+  "issueId": 676,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/676"
+}
