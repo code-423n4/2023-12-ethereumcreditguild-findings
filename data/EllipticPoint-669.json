@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EllipticPoint",
+  "risk": "3",
+  "title": "GuildToken#applyGaugeLoss - Function call can be maliciously ordered to steal gauge rewards from other users",
+  "issueId": 669,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/669"
+}
