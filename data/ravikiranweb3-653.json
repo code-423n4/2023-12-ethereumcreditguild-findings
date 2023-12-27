@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ravikiranweb3",
+  "risk": "2",
+  "title": "ERC20Gauges::_decrementWeightUntilFree() can result in Dos due to infinite loop. ",
+  "issueId": 653,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/653"
+}
