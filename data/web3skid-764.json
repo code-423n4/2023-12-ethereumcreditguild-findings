@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "web3skid",
+  "risk": "3",
+  "title": "The ProfitManager::withdrawFromSurplusBuffer() function is only callable by the GUILD_SURPLUS_BUFFER_WITHDRAW role, such role is granted only to the SurplusGuildMinter contract, and that contract doesn't call this function anywhere",
+  "issueId": 764,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/764"
+}
