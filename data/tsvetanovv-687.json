@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "tsvetanovv",
+  "risk": "3",
+  "title": "When GOVERNOR uses the LendingTerm.sol.forgive() function while a Loan is in Auction, it will break setAuctionHouse() forever",
+  "issueId": 687,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/687"
+}
