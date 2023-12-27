@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xpiken",
+  "risk": "3",
+  "title": "`creditToken` issued on `LendingTerm` might differ from `credit` managed by `SimplePSM`",
+  "issueId": 642,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/642"
+}
