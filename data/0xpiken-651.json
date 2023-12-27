@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xpiken",
+  "risk": "2",
+  "title": "The gauge status wasn't checked before reducing the user's gauge weight.",
+  "issueId": 651,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/651"
+}
