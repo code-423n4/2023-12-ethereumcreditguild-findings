@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "PENGUN",
+  "risk": "2",
+  "title": "If users suffer a loss after staking in a block, their position will not be slashed.",
+  "issueId": 728,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/728"
+}
