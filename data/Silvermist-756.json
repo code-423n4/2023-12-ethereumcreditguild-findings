@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Silvermist",
+  "risk": "2",
+  "title": "LendingTerm.sol#_partialRepay() A user cannot partial repay a loan with 0 interest",
+  "issueId": 756,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/756"
+}
