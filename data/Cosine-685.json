@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Cosine",
+  "risk": "3",
+  "title": "Auction manipulation by block stuffing and reverting on ERC-777 hooks",
+  "issueId": 685,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/685"
+}
