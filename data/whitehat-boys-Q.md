@@ -70,3 +70,17 @@ Events are necessary for these functions for better logging since there are mult
 manual review
 ## Recommended Mitigation Steps
 add missing events
+
+# L-06 A term can be added even if the contract is paused
+
+## Lines of code
+
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/governance/LendingTermOnboarding.sol#L105
+
+## Impact
+All critical operations should be paused once the contract is paused, but in this case, onboarding a lending term isn't
+
+## Tools Used
+manual review
+## Recommended Mitigation Steps
+prevent a lending term from being added when a contract is paused
