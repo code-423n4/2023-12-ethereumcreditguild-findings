@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xmuxyz",
+  "risk": "2",
+  "title": "A borrower who repay the partial amount of the loan would force to pay the `openingFee` **several times**",
+  "issueId": 700,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/700"
+}
