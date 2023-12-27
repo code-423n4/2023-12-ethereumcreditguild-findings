@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ravikiranweb3",
+  "risk": "2",
+  "title": "ProfitManager::claimRewards will claim rewards on deprecated gauges",
+  "issueId": 639,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/639"
+}
