@@ -1,6 +1,6 @@
 # 1, Checking quorum offboard should minus one
 
-##Lines of code
+## Lines of code
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/governance/LendingTermOffboarding.sol#L104
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/governance/LendingTermOffboarding.sol#L138
 
@@ -80,7 +80,7 @@ It should use time to check instead of block.number
 
 
 # 4, No incentive to call loan to go to auction if partial repay delay of loan is passed
-# Lines of code 
+## Lines of code 
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/LendingTerm.sol#L678-#L688 
 ## Vulnerability details 
 Auction process is flawed in the way, that there is no incentive for anyone to call the warn function, which is required before liquidations. In the auction process, at first, loan need to be called at `call()` function. Problem is, there is no incentive for anyone to call the `call` function. A bidder that calls the warn function has no guarantee, that he is the one, that actually can call liquidate, when the time has come. Therefore it would be a waste of Gas to call the warn function. This might result in a situation where nobody is willing to call warn, and therefore the loan not go to auction at all, which make interest become higher and higher, which could ultimately lead to a loss of Funds for the Lender, when the Borrower starts to accrue bad Debt. 
@@ -88,4 +88,26 @@ Auction process is flawed in the way, that there is no incentive for anyone to c
 No incentive to call `call` --> loan debt keep increasing without go to auction 
 Loss of funds for Lender, because Borrower might accrue bad debt 
 ## Recommended Mitigation Steps 
-Incentivice the call of `call`, to at least pay a small amount of collateral, to ensure auction is going to happen. 
+Incentivice the call of `call`, to at least pay a small amount of collateral, to ensure auction is going to happen.
+
+# 5, Attacker can front run distribute reward from GUILD token and steal newly added rewards
+## Lines of code
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/SurplusGuildMinter.sol#L114-#L212
+## Vulnerability details 
+Every time the `notifyPnL()` get called, if in the config, there is a part of token distribute for guild, there will be credit token distribute for guild holder:
+
+            if (amountForGuild != 0) {
+                uint256 _gaugeWeight = uint256(GuildToken(guild).getGaugeWeight(gauge));
+                if (_gaugeWeight != 0) {
+                    uint256 _gaugeProfitIndex = gaugeProfitIndex[gauge];
+                    if (_gaugeProfitIndex == 0) {
+                        _gaugeProfitIndex = 1e18;
+                    }
+                    gaugeProfitIndex[gauge] = _gaugeProfitIndex + (amountForGuild * 1e18) / _gaugeWeight;
+                }
+
+This enables a well-known attack vector, in which the attacker will deposit peg token to get credit token, stake them and unstake right after claim reward. 
+## Impact
+Not everytime user can claim reward and get profit like this, it depend alot about other factor: total credit token can be minted by `RateLimitedMinter`, total profit gained, ....., but the attack effectively steal the part of the newly added rewards
+## Recommendation
+Reward distribute by staking guild token should be distributed like credit token rebasing,
