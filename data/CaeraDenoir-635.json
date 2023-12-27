@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "CaeraDenoir",
+  "risk": "2",
+  "title": "The function notifyPnL could revert due to an underflow in some niche cases.",
+  "issueId": 635,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/635"
+}
