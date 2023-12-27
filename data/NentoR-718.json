@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "NentoR",
+  "risk": "2",
+  "title": "Stakers can front-run `SurplusGuildMinter::updateMintRatio()`  and stake/unstake at better rates",
+  "issueId": 718,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/718"
+}
