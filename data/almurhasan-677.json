@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "almurhasan",
+  "risk": "3",
+  "title": "As deprecatedGauge’s some state variable is not updated properly, guild rewards will be distributed unfairly if     deprecatedGauges are added again to the livegauges.",
+  "issueId": 677,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/677"
+}
