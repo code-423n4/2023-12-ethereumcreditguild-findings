@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Cosine",
+  "risk": "2",
+  "title": "Losses during creation of an auction and the bid call can lead to a temporary DoS of the auction and a complete loss of collateral for the borrower",
+  "issueId": 686,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/686"
+}
