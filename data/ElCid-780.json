@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ElCid",
+  "risk": "2",
+  "title": "User cannot partially repay his loan in terms with 0 interest and 0 opening fees",
+  "issueId": 780,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/780"
+}
