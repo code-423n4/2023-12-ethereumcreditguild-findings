@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPsuedoPandit",
+  "risk": "3",
+  "title": "LendingTerm :: __partialRepay, cumulative addition of opening fee will lead to unexpected high repayments.",
+  "issueId": 657,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/657"
+}
