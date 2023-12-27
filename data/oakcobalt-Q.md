@@ -4,18 +4,21 @@ In src/core/Core.sol,  at the time of deployment, key governor roles are granted
 In the case of, a deployer key compromised or oversight during the `renounceRole()`  process, the key governor role account is at risk of being deleted to `address(0)`.
 
 ```solidity
+//@audit-info note: "@openzeppelin/contracts": "4.9.3"
     function renounceRole(bytes32 role, address account) public virtual override {
         require(account == _msgSender(), "AccessControl: can only renounce roles for self");
         _revokeRole(role, account);
     }
 ```
 ```solidity
+//@audit-info note: "@openzeppelin/contracts": "4.9.3"
     function _revokeRole(bytes32 role, address account) internal virtual {
         if (hasRole(role, account)) {
 |>         _roles[role].members[account] = false;
             emit RoleRevoked(role, account, _msgSender());
         }
 ```
+
 Recommendations:
 
 Consider In `renounceRole(`), also check the member count for a role through `getRoleMemberCount()`. and ensure the count is greater than 1. 
@@ -58,6 +61,8 @@ In src/governance/LendingTermOffboarding.sol- `supportOffboard()`, users can vot
         );
     }
 ```
+(https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/LendingTermOffboarding.sol#L116-L146)
+
 As seen above, note that in `supportOffboard()`  require statements only ensure that (1) the poll hasn't expired; (2) the poll is valid; (3) the user hasn't voted before for the poll. 
 
 If the quorum for the poll is already reached `if (_weight + userWeight >= quorum)`  evaluates to true, then `canOffboard[term] = true;` .  However, if `canOffboard[term] ` is already true, `supportOffboard()`  will not check if the poll's quorum is already reached. And if the poll has not expired, the user will be able to continuously vote and `canOffboard[term] ` will be re-written to true. This is a wasteful operation and adding user weights after the term is already approved to be true doesn't matter for the state of the poll.
@@ -80,6 +85,8 @@ However, not all role access functions from openzeppelin's TimelockController.so
         return _roles[role].adminRole;
     }
 ```
+(https://github.com/OpenZeppelin/openzeppelin-contracts/blob/a72c9561b9c200bac87f14ffd43a8c719fd6fa5a/contracts/access/AccessControl.sol#L106-L107)
+
 Recommendation:
 In src/governance/GuildTimelockController.sol,  consider overriding `getRoleAdmin()`   to disable the method, for example reverting the function.
 
@@ -95,6 +102,7 @@ In src/core/Core.sol,  there is a comment listing all the functions available in
     // revokeRole(bytes32 role, address account)
     // renounceRole(bytes32 role, address account)
 ```
+(https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/core/Core.sol#L57-L62)
 
 Recommendations:
 Add `supportsInterface(bytes4 interfaceId)->bool`  in the comment.
