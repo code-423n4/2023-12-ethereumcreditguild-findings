@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "neocrao",
+  "risk": "2",
+  "title": "LendingTerm::debtCeiling() can return wrong debt as the min() is evaluated incorrectly",
+  "issueId": 708,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/708"
+}
