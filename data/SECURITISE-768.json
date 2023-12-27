@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SECURITISE",
+  "risk": "3",
+  "title": "Invalid check of user stake slashes all subsequent CREDIT stakers of SurplusGuildMinter after the first loss",
+  "issueId": 768,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/768"
+}
