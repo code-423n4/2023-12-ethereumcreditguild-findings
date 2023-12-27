@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "nocoder",
+  "risk": "2",
+  "title": "The transfer and burn functions in ERC20Gauges can be rendered uncallable because they call _decrementWeightUntilFree which calls values, which copies the gauge's entire storage to memory.",
+  "issueId": 631,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/631"
+}
