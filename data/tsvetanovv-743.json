@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "tsvetanovv",
+  "risk": "2",
+  "title": "The `redemptionsPaused` in `SimplePSM.sol` can be unpaused intentionally or accidentally after the admin pauses the redemptions",
+  "issueId": 743,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/743"
+}
