@@ -127,6 +127,6 @@ Where BUFFER_PERIOD is the permissible time delay.
 ````
 ##
 
-## [L-5] 
+## [L-5] CoreRoles.GAUGE_PNL_NOTIFIER can startAuction even that particular loan is not matured 
 
  
