@@ -72,32 +72,30 @@ GuildTimelockController.sol overwrites openzeppelin's TimelockController.sol whi
 
 However, not all role access functions from openzeppelin's TimelockController.sol are overwritten.
 
- `getRoleAdmin()`   from AccessControl.sol, is not overwritten in GuildTimelockController.sol.  And  `getRoleAdmin()`   is a public function, is publicly available in GuildTimelockController.sol.  When a user calls  `getRoleAdmin()` , the `_roles[role]` from AccessControl.sol will be called.  But since `_roles[role]`  storage from AccessControl.sol is not meant to be used,  `getRoleAdmin()`  will always return zero address.
+`getRoleAdmin()`   from AccessControl.sol, is not overwritten in GuildTimelockController.sol.  And  `getRoleAdmin()`   is a public function, is publicly available in GuildTimelockController.sol.  When a user calls  `getRoleAdmin()` , the `_roles[role]` from AccessControl.sol will be called.  But since `_roles[role]`  storage from AccessControl.sol is not meant to be used,  `getRoleAdmin()`  will always return zero.
 
-
-
-
-
-
-
-
- 
-
-
-
+```solidity
+//@audit `_roles` is a state variable in AccessControl.sol, and will not be written to. `getRoleAdmin()`  is not overwritten in GuildTimelockController.sol, calling `getRoleAdmin()` will return bytes32 0
+    function getRoleAdmin(bytes32 role) public view virtual override returns (bytes32) {
+        return _roles[role].adminRole;
+    }
+```
+Recommendation:
+In src/governance/GuildTimelockController.sol,  consider overriding `getRoleAdmin()`   to disable the method, for example reverting the function.
 
 ### NC-01: Incomplete comment.  AccessControlEnumerable also has a public `supportsInterface()`  function
 
-In src/core/Core.sol,  there is a comment listing all the functions available in AccessControl.sol. But the comment is missing `supportsInterface()` function.
+In src/core/Core.sol,  there is a comment listing all the functions available in AccessControl.sol. But the comment is missing `supportsInterface()` function. Incomplete comments might be misleading in the code development and auditing process.
 
-```
-   // AccessControlEnumerable is AccessControl, and also has the following functions :
+```solidity
+    // AccessControlEnumerable is AccessControl, and also has the following functions :
     // hasRole(bytes32 role, address account) -> bool
     // getRoleAdmin(bytes32 role) -> bytes32
     // grantRole(bytes32 role, address account)
     // revokeRole(bytes32 role, address account)
     // renounceRole(bytes32 role, address account)
-``
+```
+
 Recommendations:
 Add `supportsInterface(bytes4 interfaceId)->bool`  in the comment.
 
