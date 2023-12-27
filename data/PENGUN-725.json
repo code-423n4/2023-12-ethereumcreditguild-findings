@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "PENGUN",
+  "risk": "2",
+  "title": "The distribution of rewards through distribute is not linear, and some users may not receive adequate rewards.",
+  "issueId": 725,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/725"
+}
