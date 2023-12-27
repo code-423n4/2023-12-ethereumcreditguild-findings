@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xnev",
+  "risk": "2",
+  "title": "[M-02] `AuctionHouse.bid()`: Liquidation mechanism could be flawed and could generate bad debt for auctions that requires partial repayments",
+  "issueId": 750,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/750"
+}
