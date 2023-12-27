@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "deth",
+  "risk": "3",
+  "title": "LendingTermOffboarding.sol#supportOffboard() - If a offboard/cleanup occurs on a term, the term gets re-onboarded, supportOffboard can still be called to set canOffboard to true",
+  "issueId": 703,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/703"
+}
