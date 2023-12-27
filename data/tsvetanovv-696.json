@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "tsvetanovv",
+  "risk": "2",
+  "title": "The time constants in the protocol have an incorrect assumption that the time to make a block is 13 seconds and that this applies to other L2s such as Arbitrum",
+  "issueId": 696,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/696"
+}
