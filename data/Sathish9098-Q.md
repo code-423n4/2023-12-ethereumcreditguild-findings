@@ -329,4 +329,10 @@ Add Maximum allowed borrow limits
 
 
 
+ require(
+            debtToRepay >= (loanDebt * params.minPartialRepayPercent) / 1e18,
+            "LendingTerm: repay below min"
+        );
+
+What if the loanDebt bellow the params.minPartialRepayPercent ? is this reverts always ? 
  
