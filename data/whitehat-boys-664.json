@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "whitehat-boys",
+  "risk": "2",
+  "title": "There is no guarantee that `updateMintRatio` will be called for every staked user after `mintRatio` has been updated",
+  "issueId": 664,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/664"
+}
