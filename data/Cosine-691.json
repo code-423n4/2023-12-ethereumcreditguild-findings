@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Cosine",
+  "risk": "2",
+  "title": "Bad debt can occur if the collateral token blacklists a borrower leading to total loss of stake for all lenders on that term",
+  "issueId": 691,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/691"
+}
