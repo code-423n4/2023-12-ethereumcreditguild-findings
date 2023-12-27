@@ -5,64 +5,56 @@ Blacklist processing for Credit Token and Collateral token.
 If bidder and borrower is black listed, onBid function will be fail.
 
 ```solidity
-    function onBid(
-        bytes32 loanId,
-        address bidder,
-        uint256 collateralToBorrower,
-        uint256 collateralToBidder,
-        uint256 creditFromBidder
-    ) external {
-        ...
-        // pull credit from bidder
-        if (creditFromBidder != 0) {
-            CreditToken(refs.creditToken).transferFrom(
-                bidder,
-                address(this),
-                creditFromBidder
+    if (creditFromBidder != 0) {
+        CreditToken(refs.creditToken).transferFrom(
+            bidder,
+            address(this),
+            creditFromBidder
+        );
+    }
+```
+
+```solidity
+    if (pnl != 0) {
+        // forward profit, if any
+        if (interest != 0) {
+            CreditToken(refs.creditToken).transfer(
+                refs.profitManager,
+                interest
             );
         }
-        // burn credit principal, replenish buffer
-        if (principal != 0) {
-            CreditToken(refs.creditToken).burn(principal);
-            RateLimitedMinter(refs.creditMinter).replenishBuffer(principal);
-        }
+        ProfitManager(refs.profitManager).notifyPnL(address(this), pnl);
+    }
+```
 
-        // handle profit & losses
-        if (pnl != 0) {
-            // forward profit, if any
-            if (interest != 0) {
-                CreditToken(refs.creditToken).transfer(
-                    refs.profitManager,
-                    interest
-                );
-            }
-            ProfitManager(refs.profitManager).notifyPnL(address(this), pnl);
-        }
+```solidity
+    if (collateralToBorrower != 0) {
+        IERC20(params.collateralToken).safeTransfer(
+            loans[loanId].borrower,
+            collateralToBorrower
+        );
+    }
 
-        // decrease issuance
-        issuance -= borrowAmount;
-
-        // send collateral to borrower
-        if (collateralToBorrower != 0) {
-            IERC20(params.collateralToken).safeTransfer(
-                loans[loanId].borrower,
-                collateralToBorrower
-            );
-        }
-
-        // send collateral to bidder
-        if (collateralToBidder != 0) {
-            IERC20(params.collateralToken).safeTransfer(
-                bidder,
-                collateralToBidder
-            );
-        }
-
-        ...
+    // send collateral to bidder
+    if (collateralToBidder != 0) {
+        IERC20(params.collateralToken).safeTransfer(
+            bidder,
+            collateralToBidder
+        );
     }
 ```
 
 In this function, ```saferTransfer``` and ```transferFrom``` fucntion will be failed if the borrower or bidder is blacklisted.
+
+Imagine that if the borrower cannot repay or partialRepay after borrowing some credit tokens from lendingTerm.
+
+The borrower or system manager will call that loan for liquidate.
+
+And then the borrower is blacklisted in collateral token.
+
+In that case, the borrower can get any collateral token from auction.
+
+
 
 ## POC
 
