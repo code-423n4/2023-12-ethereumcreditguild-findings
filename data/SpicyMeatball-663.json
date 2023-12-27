@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SpicyMeatball",
+  "risk": "3",
+  "title": "Attacker can burn his Credit tokens to DoS the protocol",
+  "issueId": 663,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/663"
+}
