@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EllipticPoint",
+  "risk": "3",
+  "title": "ProfitManager - Gauge rewards can be stolen through sandwich attacks",
+  "issueId": 636,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/636"
+}
