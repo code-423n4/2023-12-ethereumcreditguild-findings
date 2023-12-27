@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "grearlake",
+  "risk": "3",
+  "title": "If collateral token is paused, user can not repay loan and bidding auction term",
+  "issueId": 637,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/637"
+}
