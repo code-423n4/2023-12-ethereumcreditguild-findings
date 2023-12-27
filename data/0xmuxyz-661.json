@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xmuxyz",
+  "risk": "3",
+  "title": "Pausing the redemptions in the PSM can be bypassed by front-running when a LendingTerm would be offboarded",
+  "issueId": 661,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/661"
+}
