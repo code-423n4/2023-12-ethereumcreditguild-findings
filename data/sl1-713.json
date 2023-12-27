@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "sl1",
+  "risk": "2",
+  "title": "Using blocks instead of seconds to keep track of time will not work properly on L2s blockchains.",
+  "issueId": 713,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/713"
+}
