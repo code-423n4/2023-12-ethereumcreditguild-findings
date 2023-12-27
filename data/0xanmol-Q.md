@@ -102,7 +102,75 @@ To avoid such situations altogether, it is advisable to prohibit repayments once
 
 Along with partial repayments, the option to add collateral should also be disallowed after the term is deprecated. Allowing users to add collateral after the term is deprecated would unnecessarily expose their additional collateral to risk.
 
-### Recommendation
+### POC
+effect of partial repayment on position with 20% interest and 0 openingFee
+
+```solidity
+  function test_seizeBorrowerCollateralForLessDebt() public {
+        //Increment weight
+        guild.mint(address(this), 200e18);
+        guild.incrementGauge(address(term), 100e18);
+        //Borrow Credits
+        collateral.mint(address(this), 100e18);
+        collateral.approve(address(term), 100e18);
+        bytes32 loanId = term.borrow(1000e18, 100e18);
+        assertEq(term.getLoanDebt(loanId), 1000e18); //without any interest
+
+        //Offboard the term after 10 days
+        skip(10 days);
+        guild.removeGauge(address(term));
+        //user try to partial repay
+        uint loanAmount = term.getLoanDebt(loanId);
+
+        LendingTerm.Loan memory loanDetailsBefore = term.getLoan(loanId);
+        console.log("Total debt after 10 days of taking loan", loanAmount);
+        uint payHalf = loanAmount / 2;
+        console.log("rePaying half ", payHalf);
+        console.log(
+            "collateral before partial repay",
+            loanDetailsBefore.collateralAmount
+        );
+
+        console.log("-----------------------------------------");
+        credit.approve(address(term), payHalf);
+        //@audit-issue don't allow user to partial repay
+        term.partialRepay(loanId, payHalf);
+
+        uint debtAfterRepay = term.getLoanDebt(loanId);
+        console.log("Total debt after partial repay", debtAfterRepay);
+        LendingTerm.Loan memory loanDetailsAfter = term.getLoan(loanId);
+        console.log(
+            "collateral after partial repay",
+            loanDetailsAfter.collateralAmount
+        );
+
+        assertEq(
+            loanDetailsAfter.collateralAmount,
+            loanDetailsBefore.collateralAmount
+        );
+
+        // auction and bidding...
+    }
+
+```
+###  Output
+
+```solidity
+[PASS] test_seizeBorrowerCollateralForLessDebt() (gas: 799390)
+Logs:
+  Total debt after 10 days of taking loan 1002737850787132101300
+  rePaying half  501368925393566050650
+  collateral before partial repay 100000000000000000000
+  -----------------------------------------
+  Total debt after partial repay 501368925393566050650
+  collateral after partial repay 100000000000000000000
+
+Test result: ok. 1 passed; 0 failed; 0 skipped; finished in 7.09ms
+ 
+Ran 1 test suites: 1 tests passed, 0 failed, 0 skipped (1 total tests)
+```
+
+## Recommendation
 
 Do not allow `partialRepay` and `addCollateral` after the loan is called.
 
