@@ -39,3 +39,50 @@ I would personally use as a time measure `block.timestamp`, but that would make 
         pollDurationBlocks = newPollDurationBlocks;
     }
 ```
+
+# [L-02] Front-running attack in `LendingTermOnboarding`
+## Impact
+
+It's possible to front-run the creation of terms with malicious `LendingTermParams` and deploy to the same address as the genuine one. As it would have the same address as the genuine one would have, then it could be possible to mistakenly onboard the wrong one and cause serious harm to users.
+
+## Proof of Concept
+The `Clones` library has two different functions for the efficient deployment of contracts, namely [clone](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/a72c9561b9c200bac87f14ffd43a8c719fd6fa5a/contracts/proxy/Clones.sol#L28) and [cloneDeterministic](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/a72c9561b9c200bac87f14ffd43a8c719fd6fa5a/contracts/proxy/Clones.sol#L50), where the first one uses the `CREATE` opcode and the second one uses `CREATE2` with the provided salt.
+
+However, your code uses the non-deterministic one, so the before-said situation is possible:
+
+[**LendingTermOnboarding, function createTerm**](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/LendingTermOnboarding.sol#L153)
+```solidity
+        address term = Clones.clone(implementation);
+        LendingTerm(term).initialize(
+            address(core()),
+            LendingTerm.LendingTermReferences({
+                profitManager: profitManager,
+                guildToken: guildToken,
+                auctionHouse: auctionHouse,
+                creditMinter: creditMinter,
+                creditToken: creditToken
+            }),
+            params
+        );
+```
+
+## Recommended Mitigation Steps
+
+Use `cloneDeterministic` with the salt being `msg.sender`:
+
+[**LendingTermOnboarding, function createTerm**](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/LendingTermOnboarding.sol#L153)
+```diff
+-       address term = Clones.clone(implementation);
++       address term = Clones.clone(implementation, bytes32(uint256(uint160(msg.sender))));
+        LendingTerm(term).initialize(
+            address(core()),
+            LendingTerm.LendingTermReferences({
+                profitManager: profitManager,
+                guildToken: guildToken,
+                auctionHouse: auctionHouse,
+                creditMinter: creditMinter,
+                creditToken: creditToken
+            }),
+            params
+        );
+```
