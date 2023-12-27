@@ -11,48 +11,8 @@ If bidder and borrower is black listed, onBid function will be fail.
         uint256 collateralToBorrower,
         uint256 collateralToBidder,
         uint256 creditFromBidder
-    ) external {//@audit there is no check for bidder
-        // preliminary checks
-        require(msg.sender == refs.auctionHouse, "LendingTerm: invalid caller");
-        require(
-            loans[loanId].callTime != 0 && loans[loanId].callDebt != 0,
-            "LendingTerm: loan not called"
-        );
-        require(loans[loanId].closeTime == 0, "LendingTerm: loan closed");
-
-        // sanity check on collateral movement
-        // these should never fail for a properly implemented AuctionHouse contract
-        // collateralOut == 0 if forgive() while in auctionHouse
-        uint256 collateralOut = collateralToBorrower + collateralToBidder;
-        require(
-            collateralOut == loans[loanId].collateralAmount ||
-                collateralOut == 0,
-            "LendingTerm: invalid collateral movements"
-        );
-
-        // compute pnl
-        uint256 creditMultiplier = ProfitManager(refs.profitManager)
-            .creditMultiplier();
-        uint256 borrowAmount = loans[loanId].borrowAmount;
-        uint256 principal = (borrowAmount *
-            loans[loanId].borrowCreditMultiplier) / creditMultiplier;
-        int256 pnl;
-        uint256 interest;
-        if (creditFromBidder >= principal) {
-            interest = creditFromBidder - principal;
-            pnl = int256(interest);
-        } else {
-            pnl = int256(creditFromBidder) - int256(principal);
-            principal = creditFromBidder;
-            require(
-                collateralToBorrower == 0,
-                "LendingTerm: invalid collateral movement"
-            );
-        }
-
-        // save loan state
-        loans[loanId].closeTime = block.timestamp;
-
+    ) external {
+        ...
         // pull credit from bidder
         if (creditFromBidder != 0) {
             CreditToken(refs.creditToken).transferFrom(
@@ -61,7 +21,6 @@ If bidder and borrower is black listed, onBid function will be fail.
                 creditFromBidder
             );
         }
-
         // burn credit principal, replenish buffer
         if (principal != 0) {
             CreditToken(refs.creditToken).burn(principal);
@@ -99,15 +58,11 @@ If bidder and borrower is black listed, onBid function will be fail.
             );
         }
 
-        emit LoanClose(
-            block.timestamp,
-            loanId,
-            LoanCloseType.Call,
-            creditFromBidder
-        );
+        ...
     }
-
 ```
+
+In this function, ```saferTransfer``` and ```transferFrom``` fucntion will be failed if the borrower or bidder is blacklisted.
 
 ## POC
 
