@@ -77,3 +77,15 @@ Manual review
 
 ## Recommended Mitigation Steps
 It should use time to check instead of block.number
+
+
+# 4, No incentive to call loan to go to auction if partial repay delay of loan is passed
+# Lines of code 
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/LendingTerm.sol#L678-#L688 
+## Vulnerability details 
+Auction process is flawed in the way, that there is no incentive for anyone to call the warn function, which is required before liquidations. In the auction process, at first, loan need to be called at `call()` function. Problem is, there is no incentive for anyone to call the `call` function. A bidder that calls the warn function has no guarantee, that he is the one, that actually can call liquidate, when the time has come. Therefore it would be a waste of Gas to call the warn function. This might result in a situation where nobody is willing to call warn, and therefore the loan not go to auction at all, which make interest become higher and higher, which could ultimately lead to a loss of Funds for the Lender, when the Borrower starts to accrue bad Debt. 
+## Impact 
+No incentive to call `call` --> loan debt keep increasing without go to auction 
+Loss of funds for Lender, because Borrower might accrue bad debt 
+## Recommended Mitigation Steps 
+Incentivice the call of `call`, to at least pay a small amount of collateral, to ensure auction is going to happen. 
