@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Cosine",
+  "risk": "3",
+  "title": "Reonboarding a term before calling `cleanup` breaks the offboard redemption pause mechanism",
+  "issueId": 694,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/694"
+}
