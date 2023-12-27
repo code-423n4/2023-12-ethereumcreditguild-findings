@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "deth",
+  "risk": "2",
+  "title": "GuildVetoGovernor.sol#state() - A veto proposal can be canceled, but it’s state won’t be marked as canceled, allowing the veto proposal to be executed",
+  "issueId": 704,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/704"
+}
