@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "sl1",
+  "risk": "2",
+  "title": "If a user borrowed just minBorrow amount, he won't be able to partially repay his loan.",
+  "issueId": 741,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/741"
+}
