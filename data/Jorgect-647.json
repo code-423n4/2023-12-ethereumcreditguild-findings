@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Jorgect",
+  "risk": "2",
+  "title": "User can keep claiming fees in the profit manager even with a loss in the gauge.",
+  "issueId": 647,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/647"
+}
