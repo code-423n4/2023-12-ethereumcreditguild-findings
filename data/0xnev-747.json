@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xnev",
+  "risk": "3",
+  "title": " [H-02]:`ERC20RebaseDistributor._shares2balance()`: User can permanently lose rebasing savings rewards",
+  "issueId": 747,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/747"
+}
