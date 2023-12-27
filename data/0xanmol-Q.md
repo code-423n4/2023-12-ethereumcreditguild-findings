@@ -86,6 +86,25 @@ function partialRepayDelayPassed(
             block.timestamp - params.maxDelayBetweenPartialRepay;
     }
 ```
+## [L-4] Allowing partial repayment and add collateral after offboarding can cause users to lose funds.
+
+### Code Line
+
+https://github.com/volt-protocol/ethereum-credit-guild/blob/4d33abf95fee69391af0652e3cbe5e0cffa25f9f/src/loan/LendingTerm.sol#L490
+
+### Details
+
+If the term is offboarded, all the loans within that term need to be called. This action is typically carried out by a centralized keeper.
+However, if the user or any other interacting protocol is not aware of the offboarding, they can reduce their debt by calling the partialRepay function before the keeper initiates the loan calls. By doing so, their debt will decrease while the underlying collateral remains the same.
+
+These types of loans are highly attractive to auction bidders, who can quickly place bids on them before users realize and offer their credit at a lower price to settle debt and seize collateral.
+To avoid such situations altogether, it is advisable to prohibit repayments once the term is deprecated.
+
+Along with partial repayments, the option to add collateral should also be disallowed after the term is deprecated. Allowing users to add collateral after the term is deprecated would unnecessarily expose their additional collateral to risk.
+
+### Recommendation
+
+Do not allow `partialRepay` and `addCollateral` after the loan is called.
 
 
 
