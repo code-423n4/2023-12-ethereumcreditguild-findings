@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "almurhasan",
+  "risk": "3",
+  "title": "Attacker/guild holders can drain guild rewards(steal guild rewards of others guild holder) from profitmanager contract.",
+  "issueId": 658,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/658"
+}
