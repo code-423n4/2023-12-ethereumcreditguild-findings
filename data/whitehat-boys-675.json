@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "whitehat-boys",
+  "risk": "2",
+  "title": "Governance call could be reverted even after meeting quorum",
+  "issueId": 675,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/675"
+}
