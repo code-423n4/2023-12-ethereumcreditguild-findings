@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "DanielArmstrong",
+  "risk": "3",
+  "title": "A malicious user can borrow more than the amount of `creditToken` which the protocol allows.",
+  "issueId": 936,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/936"
+}
