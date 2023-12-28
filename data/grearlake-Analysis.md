@@ -14,7 +14,7 @@ Ethereum Credit Guild is a protocol for trust minimized pooled lending. Borrower
 # Approach:
 - I started reading document to understand what is happening at the protocol, roles, the idea and mechanism of each part
 - After that, i started digging at governance mechanism, and understand about mechanism: timelock, veto, onboard, offboard, voting, ...
-- Then, i go to the rest of contract and understand workflow of user when interacting with protocol
+- Then, i go to the rest of contract and understand workflow of user when interacting with protocol. This part is the most complexity because there are many new mechanism that need to understand
 
 # Centralization risk:
 `GUARDIAN` role, managed by multisig of the team, can pause/unpause some actions to stop protocol.  But most of the important functions is decided by governor, which make this protocol decentralization.
@@ -25,6 +25,8 @@ Ethereum Credit Guild is a protocol for trust minimized pooled lending. Borrower
 
 # Conclusion:
 In summary, while Ethereum credit guild promise as a lending protocol, it requires further enhancements in addressing several issues that mentioned above.
+
+
 
 
 
