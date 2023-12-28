@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "developerjordy",
+  "risk": "2",
+  "title": "Active loans can’t be repaid when minBorrow is changed",
+  "issueId": 929,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/929"
+}
