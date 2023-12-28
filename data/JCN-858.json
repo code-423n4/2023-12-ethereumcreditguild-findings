@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "JCN",
+  "risk": "2",
+  "title": "In a single gauge system, the `debtCeiling()` calculation is faulty, resulting in stakers getting prematurely locked into a gauge as soon as its utilized debt allocation goes above ``50%``",
+  "issueId": 858,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/858"
+}
