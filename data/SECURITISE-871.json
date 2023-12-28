@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SECURITISE",
+  "risk": "2",
+  "title": "SimplePSM doesn't account for tokens with decimals higher than 18",
+  "issueId": 871,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/871"
+}
