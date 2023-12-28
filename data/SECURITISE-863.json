@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SECURITISE",
+  "risk": "3",
+  "title": "Guild holders can evade slashing by decrementing their weight in a gauge before `applyGaugeLoss` is called",
+  "issueId": 863,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/863"
+}
