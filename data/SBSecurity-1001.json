@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SBSecurity",
+  "risk": "3",
+  "title": "Wrong ProfitManager in GuildToken, will always revert for other types of gauges leading to bad debt",
+  "issueId": 1001,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1001"
+}
