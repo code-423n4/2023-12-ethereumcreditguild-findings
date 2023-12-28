@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "JCN",
+  "risk": "2",
+  "title": "In dual-gauge systems, all borrows will be bricked on both terms when the terms' calculated `debtCeilings` are equal, and will only be further allowed under specific, restrictive, conditions",
+  "issueId": 941,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/941"
+}
