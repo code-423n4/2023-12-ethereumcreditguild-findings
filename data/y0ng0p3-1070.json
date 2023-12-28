@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "y0ng0p3",
+  "risk": "3",
+  "title": "Missing checks for transferability when transferring CreditTokens",
+  "issueId": 1070,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1070"
+}
