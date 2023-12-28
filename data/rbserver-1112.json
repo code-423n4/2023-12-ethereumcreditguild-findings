@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`LendingTermOffboarding.offboard` function can only guarantee redemption pause in PSM when corresponding term is first to be offboarded",
+  "issueId": 1112,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1112"
+}
