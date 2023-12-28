@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPhantom",
+  "risk": "2",
+  "title": "The simplePSM can't be deployed with a token with more than 18 decimals",
+  "issueId": 1063,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1063"
+}
