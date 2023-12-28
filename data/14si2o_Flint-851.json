@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "14si2o_Flint",
+  "risk": "3",
+  "title": "Calling a loan with bad debt that missed partial repayment can be frontrun to avoid absorbing the lossess",
+  "issueId": 851,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/851"
+}
