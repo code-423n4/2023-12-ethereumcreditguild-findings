@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "LendingTermOffboarding : once a term is proposed to Offboard and missed from off boarding, it never be proposed for offboard again.",
+  "issueId": 1145,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1145"
+}
