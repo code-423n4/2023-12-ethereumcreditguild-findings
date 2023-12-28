@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "deliriusz",
+  "risk": "2",
+  "title": "Users may avoid gauge loss penalty by frontrunning the LendingTerm notifying loss",
+  "issueId": 1216,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1216"
+}
