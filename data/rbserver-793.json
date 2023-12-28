@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`LendingTerm.debtCeiling` function can fail to return `min(creditMinterBuffer, hardCap, debtCeiling)`",
+  "issueId": 793,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/793"
+}
