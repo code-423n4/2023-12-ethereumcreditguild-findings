@@ -58,18 +58,15 @@ Update the method signature to include the delegate address
 
 ## Lines of code
 
-https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/governance/GuildVetoGovernor.sol#L315
-https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/LendingTerm.sol#L829
-https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/LendingTerm.sol#L846
-https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/SurplusGuildMinter.sol#L293
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/governance/LendingTermOnboarding.sol#L105
 
 ## Impact
-Events are necessary for these functions for better logging since there are multiple things happening in each method in the contract
+All critical operations should be paused once the contract is paused, but in this case, onboarding a lending term isn't
 
 ## Tools Used
 manual review
 ## Recommended Mitigation Steps
-add missing events
+prevent a lending term to be added
 
 # L-06 A term can be added even if the contract is paused
 
@@ -84,3 +81,16 @@ All critical operations should be paused once the contract is paused, but in thi
 manual review
 ## Recommended Mitigation Steps
 prevent a lending term from being added when a contract is paused
+
+#L-07 Repayment should be possible until the borrowed amount is greater than or equal to the minimum borrowed amount
+
+## Lines of code
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/LendingTerm.sol#L527
+
+## Impact
+This could have a minor impact as if the timestamp represents the final block of the partial repayment time and a user's transaction is reverted due to this issue, they will be liquidated
+
+## Tools Used
+manual review
+## Recommended Mitigation Steps
+update the partial repayment check to allow repayment when the remaining debt amount  is greater than or equal to the minimum 
