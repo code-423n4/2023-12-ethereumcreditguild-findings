@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kiki",
+  "risk": "2",
+  "title": "Access Control Vulnerability: Lack of Check for Zero Address in Emergency Action",
+  "issueId": 860,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/860"
+}
