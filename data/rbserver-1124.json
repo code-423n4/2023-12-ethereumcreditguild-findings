@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "Calculations in `LendingTerm._partialRepay` function contain divisions before multiplications",
+  "issueId": 1124,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1124"
+}
