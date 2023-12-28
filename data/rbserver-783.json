@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "3",
+  "title": "Calling `LendingTerm._partialRepay` function can cause borrower to lose credit tokens used for partial repayment and fail to receive proportional collateral amount for corresponding loan if borrower becomes unable to make more partial repayments",
+  "issueId": 783,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/783"
+}
