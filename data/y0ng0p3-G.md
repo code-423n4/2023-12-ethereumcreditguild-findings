@@ -10,10 +10,6 @@
 
 - ### [G-04. Unnecessary else statement](#G-04)
 
-- ### [G-05. Use <= instead of <](#G-05)
-
-- ### [G-06. Do not initialize variables with default values](#G-06)
-
 ## <a id='G-01'></a>[G-01] Useless casting waste gas
 
 `GuildToken` inherits from `ERC20Gauges` where `getGaugeWeight` storage variable is defined.
@@ -122,7 +118,7 @@ File: src/core/CoreRoles.sol
 77: bytes32 internal constant TIMELOCK_CANCELLER = keccak256("CANCELLER_ROLE");
 
 
-src/tokens/ERC20MultiVotes.sol
+File: src/tokens/ERC20MultiVotes.sol
 
 467:    bytes32 public constant DELEGATION_TYPEHASH =
 468:        keccak256("Delegation(address delegatee,uint256 nonce,uint256 expiry)");
@@ -167,52 +163,4 @@ File: src/tokens/ERC20RebaseDistributor.sol
 438:                ERC20.balanceOf(account)
 439:            );
 440:    }
-```
-
-## <a id='G-05'></a>[G-05] Use <= instead of <
-
-```solidity
-File: src/loan/LendingTerm.sol
-
-291:    _hardCap < creditMinterBuffer ? _hardCap : creditMinterBuffer;
-
-303:    _hardCap < creditMinterBuffer ? _hardCap : creditMinterBuffer;
-
-317:    _hardCap < creditMinterBuffer ? _hardCap : creditMinterBuffer;
-```
-
-## <a id='G-06'></a>[G-06] Do not initialize variables with default values
-
-```solidity
-File: src/governance/ProfitManager.sol
-
-443:    for (uint256 i = 0; i < gauges.length; ) {
-
-467:    for (uint256 i = 0; i < gauges.length; ) {
-
-
-File: src/loan/LendingTerm.sol
-
-685:    for (uint256 i = 0; i < loanIds.length; i++) {
-
-
-File: src/tokens/ERC20MultiVotes.sol
-
-109:    uint256 low = 0;
-
-442:    uint256 i = 0;
-
-
-File: src/tokens/ERC20Gauges.sol
-
-280:    for (uint256 i = 0; i < size; ) {
-
-352:    for (uint256 i = 0; i < size; ) {
-
-516:    uint256 i = 0;
-
-
-File: src/core/CoreRef.sol
-
-96:     for (uint256 i = 0; i < calls.length; i++) {
 ```
