@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xanmol",
+  "risk": "3",
+  "title": "`Guild:applyGaugeLoss` is only decreasing the global weight of the gauge only when the gauge is not deprecated/term is not offboarded and this can cause an issue if the term is re-onboarder.",
+  "issueId": 1004,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1004"
+}
