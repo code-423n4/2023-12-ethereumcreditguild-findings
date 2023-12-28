@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xblackskull",
+  "risk": "2",
+  "title": "Lack of implementation check in createTerm Function",
+  "issueId": 1009,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1009"
+}
