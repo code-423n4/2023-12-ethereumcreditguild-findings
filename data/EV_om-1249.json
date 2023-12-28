@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EV_om",
+  "risk": "2",
+  "title": "Inability to withdraw funds for certain users due to `whenNotPaused` modifier in `RateLimitedMinter`",
+  "issueId": 1249,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1249"
+}
