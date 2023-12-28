@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Chinmay",
+  "risk": "3",
+  "title": "Slashing in SurplusGuildMinter is determined incorrectly leading to user losing his GUILD stake and also the guildReward from his staking Position",
+  "issueId": 1152,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1152"
+}
