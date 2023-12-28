@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xStalin",
+  "risk": "2",
+  "title": "If a term is reonboarded before is cleaned up, it can be offboarded immediately without going through the offboarding process again of proposing and voting for the offboarding",
+  "issueId": 1036,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1036"
+}
