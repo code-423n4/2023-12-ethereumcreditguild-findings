@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "jasonxiale",
+  "risk": "2",
+  "title": "```borrower can front-run `LendingTerm._call` to avoid being liquidated",
+  "issueId": 1008,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1008"
+}
