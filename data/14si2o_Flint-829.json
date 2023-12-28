@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "14si2o_Flint",
+  "risk": "2",
+  "title": "Lack of automatic veto execution or notification can lead to veto proposals reaching quorum but not being executed",
+  "issueId": 829,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/829"
+}
