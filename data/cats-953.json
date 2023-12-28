@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "cats",
+  "risk": "2",
+  "title": "`SimplePSM::mint` market functionality could be DOS'd with some peg tokens",
+  "issueId": 953,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/953"
+}
