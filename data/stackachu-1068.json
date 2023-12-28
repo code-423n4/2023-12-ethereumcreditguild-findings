@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "stackachu",
+  "risk": "3",
+  "title": "After a gauge loss has occured, staking in that gauge through the SurplusGuildMinter will result in a loss of the staked CREDIT",
+  "issueId": 1068,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1068"
+}
