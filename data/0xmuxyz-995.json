@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xmuxyz",
+  "risk": "2",
+  "title": "Lack of validation in the GuildToken#`_beforeTokenTransfer()` hook, which lead to that $GUILD is unintentionally burned from the GUILD holder's wallet",
+  "issueId": 995,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/995"
+}
