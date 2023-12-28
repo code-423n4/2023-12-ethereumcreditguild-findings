@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Giorgio",
+  "risk": "2",
+  "title": "The `forgive()`  function in `LendingTerm` should report the debt instead of the borrowAmount to the `PorfitManager`",
+  "issueId": 975,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/975"
+}
