@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "14si2o_Flint",
+  "risk": "2",
+  "title": "Malicious ERC20 upgradeable colleteral can be used to brick protocol ",
+  "issueId": 844,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/844"
+}
