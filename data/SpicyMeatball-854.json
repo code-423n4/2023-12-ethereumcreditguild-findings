@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SpicyMeatball",
+  "risk": "2",
+  "title": "Governance contracts wrongly assume that block time is 13 seconds",
+  "issueId": 854,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/854"
+}
