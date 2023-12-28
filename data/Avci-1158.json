@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Avci",
+  "risk": "2",
+  "title": "  badactor can borrow and repay and fill the ceiling even if the ceiling is large, (there is no decrease from totalcredit when repaying this is can be big problem too)",
+  "issueId": 1158,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1158"
+}
