@@ -1,0 +1,1 @@
+In [AuctionHouse#L35](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/AuctionHouse.sol#L35) the comments specify there is 13s between blocks, but the actual delay between blocks is 12s in Ethereum. That means the first phase will last 54 blocks instead of the inteded 50.
