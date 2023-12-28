@@ -3,7 +3,6 @@
 ![Logo](https://gist.github.com/assets/58271928/71b74c32-94bb-4b16-ba74-cd15a19e6e21)
 
 # **🛠️ Analysis -** Ethereum Credit Guild
-[PDF version](https://github.com/SB-Security/audits/blob/master/reports/contests/analysis/Ethereum%20Credit%20Guild%20-%20Analysis.pdf)
 
 ## Overview
 
@@ -317,6 +316,8 @@ Learned about:
 ## Conclusion
 
 In general, the Ethereum Credit Guild project exhibits an standard and well-developed architecture we believe the team has done a good job regarding the code, but the identified risks need to be addressed, and measures should be implemented to protect the protocol from potential malicious use cases. Additionally, it is recommended to improve the tests as there is a need of proper testing covering complex test scenarios. It is also highly recommended that the team continues to invest in security measures such as mitigation reviews, audits, and bug bounty programs to maintain the security and reliability of the project.
+
+
 
 ### Time spent:
 200 hours
