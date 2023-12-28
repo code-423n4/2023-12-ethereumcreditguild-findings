@@ -11,6 +11,8 @@ ECG inherits solidity contracts from openzeppelin and solmate, and both these us
 
 Recommend using recent Solidity version 0.8.15 which has the fix for these issues 
 
+***
+
 ## 2. Core.sol `CreateRole` function should check for role existence before setting role.
 
 ```
@@ -25,8 +27,10 @@ Recommend using recent Solidity version 0.8.15 which has the fix for these issue
 Lack of check for role existence allows for setting roles to non-existent roles.
 
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/8f439544b8a634e8f3c3db718416a39752cd471e/src/core/Core.sol#L50
+
+
 ***
-***
+
 ## 3. Credit tokens can be used as peg token.
 The `SimplePSM` allows to credit tokens be minted or redeemed based on a stable peg token. As, there's no check preventing that the credit token is not the peg token, this introduces the possibility of minting the credit tokens by providing the credit token as the peg token. This can inflate the total supply of credit tokens without the new tokens having any asset backing. The contract, for some reason, error or malicious will be deployed with the credit token as peg token. The `mint` and `mintAndEnterRebase` function, will then require credit will be minted to users, based on credit that they can provide (think FTX), which will inflate the credit totalsupply. 
 
