@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Ward",
+  "risk": "3",
+  "title": "Signatures can be replayed with castVoteWithReasonAndParamsBySig() to cast more votes than the user intended",
+  "issueId": 1234,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1234"
+}
