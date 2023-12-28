@@ -204,7 +204,7 @@ https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d
 
 ##
 
-## [L-7] `All pending transactions become DOS if borrower borrows all issuance from particular LendingTerm
+## [L-7] All pending transactions become DOS if borrower borrows all issuance from particular LendingTerm
 
 A potential Denial-of-Service (DoS) attack on the lending platform, specifically targeting the borrow function in conjunction with the hardcap limit.
 
@@ -366,9 +366,18 @@ New Credit Multiplier
 - This situation poses a risk of liquidation if the collateral value falls below certain thresholds, adding further financial pressure on the borrower.
 
 ```solidity
-FILE: 
+FILE: 2023-12-ethereumcreditguild/src/loan/LendingTerm.sol
+
+ uint256 creditMultiplier = ProfitManager(refs.profitManager)
+            .creditMultiplier();
+        uint256 principal = (borrowAmount * loan.borrowCreditMultiplier) /
+            creditMultiplier;
 
 ```
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/LendingTerm.sol#L583-L586
+
+### Recommended Mitigation
+
 
 
  
