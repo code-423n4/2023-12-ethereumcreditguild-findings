@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Varun_05",
+  "risk": "3",
+  "title": "Not decrementing the gauge Weight of SuprlusGuildMinter contract can cause stakers to receive less rewards than they should receive.",
+  "issueId": 1066,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1066"
+}
