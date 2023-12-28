@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Giorgio",
+  "risk": "2",
+  "title": "The `forgive` and `onBid` functions wrongly substracts the borrowAmount from the issuance",
+  "issueId": 1007,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1007"
+}
