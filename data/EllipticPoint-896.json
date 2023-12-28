@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EllipticPoint",
+  "risk": "2",
+  "title": "SimplePSM - `decimalCorrection` is immutable and can't account for upgradeable ERC-20 tokens that change their decimals",
+  "issueId": 896,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/896"
+}
