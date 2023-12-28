@@ -1,9 +1,9 @@
 
-# [L-01] - If one loan is partiallyRepaid, callMany will fail
+# [L-01] - `callMany` will fail if any of the loan is updated right before
 
-People calling loans using `callMany` would see all the calls revert if any of these is partially repaid right before in the same block.
-Would be a better UX to not revert for failed `_call` but just to pass them.
-This can be done using the low level `call("")` function.
+People calling loans using `LendingTerm::callMany` would see their whole call revert if any of the loan called are updated (e.g partially repaid) right before in the same block.
+Would give a better UX to not revert for failed `LendingTerm::_call` but just to pass them.
+This can be done using the low level `call("")` function, and the success returned value to act accordingly.
 
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/LendingTerm.sol#L683
 ```solidity
