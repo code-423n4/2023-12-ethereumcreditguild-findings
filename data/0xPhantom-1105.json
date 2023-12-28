@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPhantom",
+  "risk": "2",
+  "title": "The repay, partialRepay and bid functions can be DOS if the collateral is USDT or USDC and if the borrower is blackListed",
+  "issueId": 1105,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1105"
+}
