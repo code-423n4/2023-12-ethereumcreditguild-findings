@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "DanielArmstrong",
+  "risk": "3",
+  "title": "When a term is offboarded but not cleaned up and then it is onboarded again, an attacker can offboard it freely.",
+  "issueId": 942,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/942"
+}
