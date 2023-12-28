@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AlexCzm",
+  "risk": "3",
+  "title": " CreditMultiplier is not applied to `creditAsked` when a bid for an active auction is placed. This can reduce the creditMultiplier and thus the value of creditToken holders.",
+  "issueId": 1069,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1069"
+}
