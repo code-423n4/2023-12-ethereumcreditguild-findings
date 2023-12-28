@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "14si2o_Flint",
+  "risk": "2",
+  "title": "Keccak loanId calculation can cause legitimate borrows to revert and breaks integration with automated solutions/aggregators",
+  "issueId": 836,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/836"
+}
