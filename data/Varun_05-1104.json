@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Varun_05",
+  "risk": "3",
+  "title": "Incorrect Value of userStake taken which causes everyone to be slashed even if they staked after the last gauge loss",
+  "issueId": 1104,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1104"
+}
