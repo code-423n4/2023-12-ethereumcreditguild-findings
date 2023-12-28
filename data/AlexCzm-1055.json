@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AlexCzm",
+  "risk": "2",
+  "title": "Diminished returns for gaugeWeight voters if they stake before `applyGaugeLoss` for all slashable stakers ",
+  "issueId": 1055,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1055"
+}
