@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xStalin",
+  "risk": "2",
+  "title": "The logic to compute the DebtCeiling can erroneously DoS transactions that involves decrementing the weight in a gauge",
+  "issueId": 820,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/820"
+}
