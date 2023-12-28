@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "almurhasan",
+  "risk": "3",
+  "title": "MEV/some credit stakers can get unfairly more rewards than other credit stakers in surplusguildminter contract",
+  "issueId": 813,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/813"
+}
