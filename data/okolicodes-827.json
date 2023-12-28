@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "okolicodes",
+  "risk": "2",
+  "title": "Deprecated gauges will cause active gauges to be unable to retrieve rewards",
+  "issueId": 827,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/827"
+}
