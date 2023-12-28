@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": "Position of `++i` is wrong in `ERC20Gauges.sol#_decrementWeightUntilFree()` which would cause an infinite loop when the `if` condition is met",
+  "issueId": 1246,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1246"
+}
