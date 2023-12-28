@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "developerjordy",
+  "risk": "2",
+  "title": "User can borrow, don’t pay back the loan and wait to call loan and frontrun the bidding process. ",
+  "issueId": 934,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/934"
+}
