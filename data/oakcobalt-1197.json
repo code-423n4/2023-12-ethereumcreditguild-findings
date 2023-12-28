@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "oakcobalt",
+  "risk": "2",
+  "title": "A malicious actor can easily front-run `proposeOnboard` and cancel an unfavorable term",
+  "issueId": 1197,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1197"
+}
