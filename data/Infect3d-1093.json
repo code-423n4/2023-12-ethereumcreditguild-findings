@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Infect3d",
+  "risk": "2",
+  "title": " It is possible to frontrun notifyPnL when a profit occurs to unfairly get rewards",
+  "issueId": 1093,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1093"
+}
