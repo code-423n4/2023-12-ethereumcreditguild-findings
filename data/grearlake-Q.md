@@ -111,3 +111,96 @@ This enables a well-known attack vector, in which the attacker will deposit peg 
 Not everytime user can claim reward and get profit like this, it depend alot about other factor: total credit token can be minted by `RateLimitedMinter`, total profit gained, ....., but the attack effectively steal the part of the newly added rewards
 ## Recommendation
 Reward distribute by staking guild token should be distributed like credit token rebasing,
+
+# 6, User can keep using old GUILD token before slash to claim gauge reward
+## Lines of code 
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/tokens/GuildToken.sol#L133-#L161
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/governance/ProfitManager.sol#L409-#L436
+## Vulnerability details 
+In `ProfitManager#notifyPnL()` function, reward are updated based on total gauge weight:
+
+            if (amountForGuild != 0) {
+                // update the gauge profit index
+                // if the gauge has 0 weight, does not update the profit index, this is unnecessary
+                // because the profit index is used to reattribute profit to users voting for the gauge,
+                // and if the weigth is 0, there are no users voting for the gauge.
+                uint256 _gaugeWeight = uint256(
+                    GuildToken(guild).getGaugeWeight(gauge)
+                );
+                if (_gaugeWeight != 0) {
+                    uint256 _gaugeProfitIndex = gaugeProfitIndex[gauge];
+                    if (_gaugeProfitIndex == 0) {
+                        _gaugeProfitIndex = 1e18;
+                    }
+                    gaugeProfitIndex[gauge] =
+                        _gaugeProfitIndex +
+                        (amountForGuild * 1e18) /
+                        _gaugeWeight;
+                }
+            }
+And `ProfitManager#claimGaugeRewards()` function claim reward for user based on profit index and gauge weight of user:
+
+    function claimGaugeRewards(
+        address user,
+        address gauge
+    ) public returns (uint256 creditEarned) {
+        //@auditz check xem nếu removed rồi thì còn claim được không (dc nha)
+        //@auditn flashloan để claim ? (reported)
+        uint256 _userGaugeWeight = uint256(
+            GuildToken(guild).getUserGaugeWeight(user, gauge)
+        );
+        if (_userGaugeWeight == 0) {
+            return 0;
+        }
+        uint256 _gaugeProfitIndex = gaugeProfitIndex[gauge];
+        uint256 _userGaugeProfitIndex = userGaugeProfitIndex[user][gauge];
+        if (_gaugeProfitIndex == 0) {
+            _gaugeProfitIndex = 1e18;
+        }
+        if (_userGaugeProfitIndex == 0) {
+            _userGaugeProfitIndex = 1e18;
+        }
+        uint256 deltaIndex = _gaugeProfitIndex - _userGaugeProfitIndex;
+        if (deltaIndex != 0) {
+            creditEarned = (_userGaugeWeight * deltaIndex) / 1e18;
+            userGaugeProfitIndex[user][gauge] = _gaugeProfitIndex;
+        }
+        if (creditEarned != 0) {
+            emit ClaimRewards(block.timestamp, user, gauge, creditEarned);
+            CreditToken(credit).transfer(user, creditEarned);
+        }
+    }
+
+And `SurplusGuildMinter#getRewards()` function is used to mint guild reward for user:
+
+        if (deltaIndex != 0) {
+            uint256 creditReward = (uint256(userStake.guild) * deltaIndex) /
+                1e18;
+            uint256 guildReward = (creditReward * rewardRatio) / 1e18;
+            if (slashed) {
+                guildReward = 0;
+            }
+
+            // forward rewards to user
+            if (guildReward != 0) {
+                RateLimitedMinter(rlgm).mint(user, guildReward);
+                emit GuildReward(block.timestamp, user, guildReward);
+            }
+            if (creditReward != 0) {
+                CreditToken(credit).transfer(user, creditReward);
+            }
+
+            // save the updated profitIndex
+            userStake.profitIndex = SafeCastLib.safeCastTo160(_profitIndex);
+            updateState = true;
+        }
+It can be seen that if user's gauge weight is not reset by `applyGaugeLoss()` function, it can keep gaining reward by old gauge weight token. And there is no incentive for user to call `applyGaugeLoss()` for other user, it will lead to other user can keep earning reward with old gauge weight
+
+The following vuln is described below:
+1, Alice stake GUILD token and gain more guild token by time passed
+2, bad debt appeared, but Alice's guild token is not reset because no one call `applyGaugeLoss`
+3, If new reward appear, Alice can claim reward based on these GUILD token
+## Impact
+User who didn't apple gauge loss can keep claiming reward, although they can not gain more guild token.
+## Recommendation
+User who call `applyGaugeLoss` should get some reward, like credit token, from other user, to incentive everyone reset
