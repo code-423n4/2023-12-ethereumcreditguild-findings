@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EV_om",
+  "risk": "3",
+  "title": "Inability to unstake if the credit minter buffer is low",
+  "issueId": 1247,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1247"
+}
