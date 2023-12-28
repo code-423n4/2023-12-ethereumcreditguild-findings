@@ -4,6 +4,7 @@
  |-:|:-|
 | [L-01] | In `LendingTerm::_partialRepay()` it uses the `>` sign to validate the `minBorrow` amount, however in `LendingTerm::_borrow()` it uses `>=`
 | [L-02] | The `LendingTerm::forgive()` function does not validate that the loan is on call
+| [L-03] | The `RateLimitedMinter().replenishBuffer()` is not called when `ProfitManager.surplusBuffer` or `ProfitManager.termSurplusBuffer` paid for the bad debt
 | [N-01] | Unused `RateLimitedMinter` contract import
 | [N-02] | Return custom error when user does not have gauge weight in the `applyGaugeLoss()` function
 
@@ -108,6 +109,55 @@ The `LendingTerm::forgive()` function must validate that the loan is not up for 
         // emit event
         emit LoanClose(block.timestamp, loanId, LoanCloseType.Forgive, 0);
     }
+```
+
+## L-03 - The `RateLimitedMinter().replenishBuffer()` is not called when `ProfitManager.surplusBuffer` or `ProfitManager.termSurplusBuffer` paid for the bad debt
+
+When there is `bad debt` in the lending term, the profit manager is called via the [ProfitManager::notifyPnL()](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/ProfitManager.sol#L292) function, then if the [`surplusBuffer` paid](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/ProfitManager.sol#L315-L340) for the bad debt. The problem is that once the `surplusBuffer` paid for the bad debt, the [RateLimitedMinter::replenishBuffer()](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/rate-limits/RateLimitedMinter.sol#L60) should be called.
+
+**Recommended Mitigation Steps**
+
+Call the `RateLimitedMinter::replenishBuffer()` function if the `ProfitManager.suplusBuffer` paid for the bad debt.
+
+```diff
+File: ProfitManager.sol
+292:     function notifyPnL(
+293:         address gauge,
+294:         int256 amount
+295:     ) external onlyCoreRole(CoreRoles.GAUGE_PNL_NOTIFIER) {
+...
+...
+314: 
+315:             if (loss < _surplusBuffer) {
+316:                 // deplete the surplus buffer
+317:                 surplusBuffer = _surplusBuffer - loss;
+318:                 emit SurplusBufferUpdate(
+319:                     block.timestamp,
+320:                     _surplusBuffer - loss
+321:                 );
+322:                 CreditToken(_credit).burn(loss);
+++                   RateLimitedMinter(creditMinter).replenishBuffer(loss);
+323:             } else {
+324:                 // empty the surplus buffer
+325:                 loss -= _surplusBuffer;
+326:                 surplusBuffer = 0;
+327:                 CreditToken(_credit).burn(_surplusBuffer);
+++                   RateLimitedMinter(creditMinter).replenishBuffer(_surplusBuffer);
+328:                 emit SurplusBufferUpdate(block.timestamp, 0);
+329: 
+330:                 // update the CREDIT multiplier
+331:                 uint256 creditTotalSupply = CreditToken(_credit).totalSupply();
+332:                 uint256 newCreditMultiplier = (creditMultiplier *
+333:                     (creditTotalSupply - loss)) / creditTotalSupply;
+334:                 creditMultiplier = newCreditMultiplier;
+335:                 emit CreditMultiplierUpdate(
+336:                     block.timestamp,
+337:                     newCreditMultiplier
+338:                 );
+339:             }
+340:         }
+...
+...
 ```
 
 ## N-01 - Unused `RateLimitedMinter` contract import
