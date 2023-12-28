@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xdice91",
+  "risk": "2",
+  "title": "Guild token can be transferred at any time as there is no logic stopping it",
+  "issueId": 1192,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1192"
+}
