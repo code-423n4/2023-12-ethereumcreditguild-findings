@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "HChang26",
+  "risk": "2",
+  "title": "`notifyPnL()`  will always revert when not enough to `_surplusBuffer` to handle losses",
+  "issueId": 931,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/931"
+}
