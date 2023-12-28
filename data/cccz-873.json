@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "cccz",
+  "risk": "3",
+  "title": "SurplusGuildMinter.getRewards always returns slashed = true when the gauge loss occurs",
+  "issueId": 873,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/873"
+}
