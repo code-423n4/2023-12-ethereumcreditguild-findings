@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xmuxyz",
+  "risk": "3",
+  "title": "Lack of the `slippage` protection for the `amountOut` of the $CREDIT to be minted, which lead to a huge slippage loss for a lender ",
+  "issueId": 925,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/925"
+}
