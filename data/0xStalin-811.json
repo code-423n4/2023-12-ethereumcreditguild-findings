@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xStalin",
+  "risk": "3",
+  "title": "Users can steal all the GaugeRewards by transfering their GAUGE Tokens among different accounts of their own and in each account claiming rewards",
+  "issueId": 811,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/811"
+}
