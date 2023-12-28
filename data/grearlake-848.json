@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "grearlake",
+  "risk": "2",
+  "title": "Bidder are not able to bid sometimes during auction phase when other auction loss applied during auction",
+  "issueId": 848,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/848"
+}
