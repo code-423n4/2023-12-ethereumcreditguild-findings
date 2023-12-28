@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "karanctf",
+  "risk": "2",
+  "title": "Wrong constant `POLL_DURATION_BLOCKS` causes 28 days less in 1 year voting period",
+  "issueId": 1111,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1111"
+}
