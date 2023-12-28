@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "okolicodes",
+  "risk": "2",
+  "title": "Signer is not validated in the delegatebySig() function",
+  "issueId": 990,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/990"
+}
