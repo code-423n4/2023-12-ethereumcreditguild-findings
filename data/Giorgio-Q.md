@@ -78,3 +78,29 @@ Remove the unused function
 ##Links: 
 
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/ProfitManager.sol#L267-L275
+
+## Update comments in Auction House
+
+## Impact:
+
+comments indicate that auction with  0 creditAsked can be bidded on, however the code only allows auctions with 0 creditAsked to be `forgive()`. This is confusing, best to update comments.
+
+## Remediation:
+
+Use comments that describe the latest intended actions
+
+## Links: 
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/AuctionHouse.sol#L154-L161
+
+## User that staked in a losing gauge can still accrue rewards, until rewards are claimed
+
+## Impact:
+
+A user that has staked in a gauge that has a registered while in his stake period will still be able to accrue rewards until rewards are claimed, so it is in the user best interest to keep waiting until the gauge doesn't have any activity.
+
+## Remediation:
+
+
+
+## Links: 
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/SurplusGuildMinter.sol#L216-L290
