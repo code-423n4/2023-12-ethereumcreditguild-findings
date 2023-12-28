@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": " Users wouldn't be able to unstake in `SurplusGuildMinter.sol` due to the restricted access placed on `ProfitManager.withdrawFromTermSurplusBuffer()` ",
+  "issueId": 1263,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1263"
+}
