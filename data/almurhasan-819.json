@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "almurhasan",
+  "risk": "2",
+  "title": "Guild holders can avoid gauge loss apply and credit staker(in surplusguildminter contract) can avoid slashing.",
+  "issueId": 819,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/819"
+}
