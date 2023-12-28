@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xmuxyz",
+  "risk": "2",
+  "title": "Incorrect validation to check whether or not the loan has been running for at least 1 block since the loan opened ",
+  "issueId": 965,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/965"
+}
