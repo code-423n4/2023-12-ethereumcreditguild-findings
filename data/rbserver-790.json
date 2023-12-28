@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`LendingTermOffboarding.supportOffboard` function can be called to change offboarded term's `canOffboard` back to `true`",
+  "issueId": 790,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/790"
+}
