@@ -358,19 +358,6 @@ function getBidDetail(bytes32 loanId) public view returns (uint256 collateralRec
 #### Why It's Weak:
 The getBidDetail function calculates how much collateral is offered and how much debt is asked for, based on the time elapsed in the auction. The logic is complex and time-dependent, making it prone to miscalculations or manipulation, especially if not properly validated against edge cases or unexpected scenarios (like extreme market conditions).
 
-###  Forgiveness Logic (forgive Function)
-
-```solidity
-
-function forgive(bytes32 loanId) external {
-    // ...
-    LendingTerm(_lendingTerm).onBid(...);
-}
-
-```
-#### Why It's Weak:
-The forgive function is a sensitive operation as it involves forgiving a loan without recovering any collateral or debt. This function should have strict access controls to prevent potential misuse or unauthorized access. The current implementation doesn't explicitly check if the caller is authorized to forgive the loan, which could be a security risk.
-
 ### Handling of Negative Values in notifyPnL
 
 ```solidity
@@ -381,6 +368,35 @@ if (amount < 0) {
 #### Why It's Weak:
 The handling of losses (negative values) is complex and involves multiple state changes (e.g., adjusting surplus buffers, updating credit multipliers). If not managed accurately, it could lead to financial discrepancies in the system, such as incorrect loss accounting or multiplier adjustments.
 
+### creditMultiplier Risk
+
+```solidity
+
+// update the CREDIT multiplier
+                uint256 creditTotalSupply = CreditToken(_credit).totalSupply();
+                uint256 newCreditMultiplier = (creditMultiplier *
+                    (creditTotalSupply - loss)) / creditTotalSupply;
+                creditMultiplier = newCreditMultiplier;
+                emit CreditMultiplierUpdate(
+                    block.timestamp,
+                    newCreditMultiplier
+                );
+
+```
+### Calculating the New Multiplier
+- creditTotalSupply is the total supply of CREDIT tokens in the system.
+- loss is the amount of bad debt that needs to be accounted for, beyond the surplus buffer.
+- The new creditMultiplier is calculated by reducing the current multiplier proportionally to the ratio of the loss to the total CREDIT supply.
+
+### Effect of the Calculation:
+- The formula (creditMultiplier * (creditTotalSupply - loss)) / creditTotalSupply effectively reduces the creditMultiplier.
+- If loss is significant compared to creditTotalSupply, this reduction can be substantial.
+- For example, if the current multiplier is 1.0 (or 1e18 in Solidity's integer math), and the loss is 10% of the total CREDIT supply, the new multiplier would be 0.9 (or 0.9e18), representing a 10% decrease.
+
+### Implications:
+``Decrease in CREDIT Value``: The decrease in the creditMultiplier effectively lowers the value of CREDIT tokens throughout the system. This means that every CREDIT token now represents a smaller share of the system's value.
+
+``Increased Debt for Borrowers``:  This decrease means borrowers now owe more CREDIT tokens to cover the same nominal value of debt.
 
 
 
