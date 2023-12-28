@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "oxwhite",
+  "risk": "2",
+  "title": "Lack of Input Validation can result in calling incorrect loan",
+  "issueId": 978,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/978"
+}
