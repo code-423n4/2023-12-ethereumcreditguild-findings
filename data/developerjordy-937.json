@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "developerjordy",
+  "risk": "3",
+  "title": "Updating MintRatio can lead to out of sync reward values",
+  "issueId": 937,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/937"
+}
