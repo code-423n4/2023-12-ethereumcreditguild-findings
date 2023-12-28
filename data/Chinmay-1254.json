@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Chinmay",
+  "risk": "2",
+  "title": "SurplusGuildMinter's operations can be DOS'ed if there exist enough active gauges",
+  "issueId": 1254,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1254"
+}
