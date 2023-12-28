@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EVDoc",
+  "risk": "2",
+  "title": "openingFee charged multiple times when a partial repayment is made",
+  "issueId": 1047,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1047"
+}
