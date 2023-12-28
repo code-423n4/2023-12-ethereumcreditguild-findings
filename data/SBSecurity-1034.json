@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SBSecurity",
+  "risk": "2",
+  "title": "Hardcoded block numbers will lead to unsuccessful off-boarding",
+  "issueId": 1034,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1034"
+}
