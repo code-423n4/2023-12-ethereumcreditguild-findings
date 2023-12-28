@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "carrotsmuggler",
+  "risk": "2",
+  "title": "No liquidation mechanism is present for non-periodic payment loans.",
+  "issueId": 1174,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1174"
+}
