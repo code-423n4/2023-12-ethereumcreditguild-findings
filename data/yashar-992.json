@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "yashar",
+  "risk": "3",
+  "title": "Attacker Can Steal USDC from the Protocol by Onboarding a Lending Term with an Upgradeable ERC-20 Collateral",
+  "issueId": 992,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/992"
+}
