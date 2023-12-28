@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPhantom",
+  "risk": "3",
+  "title": "The partialReapay can be DOS if the minBorrow is incremented",
+  "issueId": 1159,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1159"
+}
