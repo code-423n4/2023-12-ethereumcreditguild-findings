@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Akali",
+  "risk": "2",
+  "title": "SurplusGuildMinter contract might be DoS because function `getRewards` claims rewards from all active lending terms ",
+  "issueId": 1140,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1140"
+}
