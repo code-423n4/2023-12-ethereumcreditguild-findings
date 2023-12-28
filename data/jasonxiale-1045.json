@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "jasonxiale",
+  "risk": "2",
+  "title": "Vulnerability related to 'Optimizer Bug Regarding Memory Side Effects of Inline Assembly'",
+  "issueId": 1045,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1045"
+}
