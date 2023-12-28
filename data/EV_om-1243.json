@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EV_om",
+  "risk": "3",
+  "title": "DoS in `LendingTermOnboarding` via proposal creation and cancellation",
+  "issueId": 1243,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1243"
+}
