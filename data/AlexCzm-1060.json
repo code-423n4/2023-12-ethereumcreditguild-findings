@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AlexCzm",
+  "risk": "3",
+  "title": "Users can abuse incorrect userGaugeProfitIndex accounting to drain up the gauge rewards.",
+  "issueId": 1060,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1060"
+}
