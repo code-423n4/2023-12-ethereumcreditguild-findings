@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "cccz",
+  "risk": "2",
+  "title": "When only one gauge of a type exist, removing that gauge may result in the user not being able to decrement that gauge.",
+  "issueId": 885,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/885"
+}
