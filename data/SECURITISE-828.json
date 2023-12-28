@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SECURITISE",
+  "risk": "3",
+  "title": "Borrowing is allowed even when there is no liquidity, exposing the borrower to unjustified fee payments",
+  "issueId": 828,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/828"
+}
