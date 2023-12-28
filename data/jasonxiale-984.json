@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "jasonxiale",
+  "risk": "3",
+  "title": "all stakers will lose all tokens in `SurplusGuildMinter.getRewards`",
+  "issueId": 984,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/984"
+}
