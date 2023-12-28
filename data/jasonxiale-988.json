@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "jasonxiale",
+  "risk": "2",
+  "title": "`LendingTermOffboarding.POLL_DURATION_BLOCKS` might not be correct for some L2s",
+  "issueId": 988,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/988"
+}
