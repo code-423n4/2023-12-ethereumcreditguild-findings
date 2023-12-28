@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "niroh",
+  "risk": "2",
+  "title": "LendingTerm debtCeiling() calculation error causes gauge decrements to fail when they shouldn't",
+  "issueId": 872,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/872"
+}
