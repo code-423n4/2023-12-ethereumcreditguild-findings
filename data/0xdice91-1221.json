@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xdice91",
+  "risk": "2",
+  "title": "`ERC20MultiVotes.sol` does not allow delegation to `multiple` addresses.",
+  "issueId": 1221,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1221"
+}
