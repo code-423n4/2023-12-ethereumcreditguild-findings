@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xStalin",
+  "risk": "2",
+  "title": "Repayers using EOA accounts can be affected if baddebt is generated when they are repaying loans",
+  "issueId": 1041,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1041"
+}
