@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Chinmay",
+  "risk": "3",
+  "title": "GuildToken transfers are not allowed if any of the initial gauges of the user has its debtCeiling fully utilized",
+  "issueId": 1107,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1107"
+}
