@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "imare",
+  "risk": "2",
+  "title": "LendTerm#debtCeiling can incorrectly show ceiling for offboarded/deprecated lending term",
+  "issueId": 954,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/954"
+}
