@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "ERC20RebaseDistributor : `burn  an be DOSed due to underflow issue.",
+  "issueId": 1217,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1217"
+}
