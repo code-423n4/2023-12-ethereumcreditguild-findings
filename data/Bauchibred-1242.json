@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": "Accounting flaw in regards to `donateToSurplusBuffer()` when coupled with some credit tokens",
+  "issueId": 1242,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1242"
+}
