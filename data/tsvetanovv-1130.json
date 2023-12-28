@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "tsvetanovv",
+  "risk": "2",
+  "title": "When reducing a gauge weight, we must first call `profitManager.claimGaugeRewards()`",
+  "issueId": 1130,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1130"
+}
