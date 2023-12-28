@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Infect3d",
+  "risk": "2",
+  "title": "Hardcoded block.number duration for 7-days Poll Duration Incompatible with Layer 2 Block Times",
+  "issueId": 1092,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1092"
+}
