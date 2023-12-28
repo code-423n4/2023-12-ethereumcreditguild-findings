@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Chinmay",
+  "risk": "3",
+  "title": "Overreporting of loss in some cases due to how principal is calculated.",
+  "issueId": 842,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/842"
+}
