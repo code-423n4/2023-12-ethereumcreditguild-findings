@@ -346,20 +346,11 @@ function _repay(address repayer, bytes32 loanId) internal {
 
 ```
 
-2. As we know, a single ProfitManager contract manages the profits generated and distributed within the system among various stakeholders with different lending terms. If any security risk or financial error occurs, apart from the lending terms contract, other contracts that depend on the profit manager will also be at risk. Our recommendation is to implement an upgradeable mechanism for crucial contracts. We suggest adopting the UUPS (Universal Upgradeable Proxy Standard) for crucial contracts, allowing for upgrades even if various risks occur.Consider the contract's upgradeability to address potential vulnerabilities or add new features. Add setter function to the contract which dont't have incase of profit manager ahve vulnerable code then it can set to new profit manager without affecting the implemented contract (like surplus guild minter and lending term).
+2. As we know, a single ProfitManager contract manages the profits generated and distributed within the system among various stakeholders with different lending terms. If any security risk or financial error occurs, apart from the lending terms contract, other contracts that depend on the profit manager will also be at risk. Our recommendation is to implement an upgradeable mechanism for crucial contracts. We suggest adopting the UUPS (Universal Upgradeable Proxy Standard) for crucial contracts, allowing for upgrades even if various risks occur.Consider the contract's upgradeability to address potential vulnerabilities or add new features. Add setter function to the contract which dont't have incase of profit manager have vulnerable code then it can set to new profit manager without affecting the implemented contract (like surplus guild minter and lending term).
 
 
-3. Slash the loan if `lastGaugeLoss` is equvivalent to `userStake.lastGaugeLoss` now function `getRewards()` working perfect but if both loss occur in same block.timestamp it will not slash.
-Recommendation
-```solidity
 
-        if (lastGaugeLoss >= uint256(userStake.lastGaugeLoss)) { //Qa even lastgauge
-            slashed = true;
-        }
-```
-The above recommendation will slashed even `lastGaugeLoss` is equvivalent to `userStake.lastGaugeLoss`.
-
-4. Add a mechanism to Lending term if partial repayment is allowed then has to pay with minimum amount . If partial repayment is not required then borrwer has to be repayment full .In below POC code snippet you can see  `minPartialRepayPercent` set as zero means partial repayment has no size it would allows borrowers to pay as little as they want and considered as partial repayment and function `partialRepayDelayPassed()` doesn't give true because borrwer already paying partial amount and loan cannot be called for auction also.
+3. Add a mechanism to Lending term if partial repayment is allowed then has to pay with minimum amount . If partial repayment is not required then borrwer has to be repayment full .In below POC code snippet you can see  `minPartialRepayPercent` set as zero means partial repayment has no size it would allows borrowers to pay as little as they want and considered as partial repayment and function `partialRepayDelayPassed()` doesn't give true because borrwer already paying partial amount and loan cannot be called for auction also.
 
 Recommendation:-
 
@@ -390,6 +381,8 @@ Highlights of the report
 3.Comparison table with other competitive protocol 
 
 4.Best recommendation which could safely implemented.
+
+
 
 ### Time spent:
 87 hours
