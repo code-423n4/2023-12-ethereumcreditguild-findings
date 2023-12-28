@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "yashar",
+  "risk": "3",
+  "title": "Attacker Can Take a Loan and Retrieve Their Full Collateral on Auction Without Repaying the Debt",
+  "issueId": 1039,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1039"
+}
