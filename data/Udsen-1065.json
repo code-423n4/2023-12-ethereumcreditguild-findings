@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Udsen",
+  "risk": "2",
+  "title": "`GuildVetoGovernor.votingPeriod` FUNCTION HARDCODES THE NUMBER OF BLOCKS PER YEAR BY ASSUMING BLOCK DURATION IS ALWAYS 13 SECONDS BUT IT COULD CHANGE IN THE FUTURE",
+  "issueId": 1065,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1065"
+}
