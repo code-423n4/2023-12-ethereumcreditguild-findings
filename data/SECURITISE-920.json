@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SECURITISE",
+  "risk": "2",
+  "title": "Veto will fail if GOVERNOR changes timelock amidst an active proposal veto period",
+  "issueId": 920,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/920"
+}
