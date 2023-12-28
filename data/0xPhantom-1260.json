@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPhantom",
+  "risk": "3",
+  "title": "The Credit Multiplier can be set to zero because of a loss.",
+  "issueId": 1260,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1260"
+}
