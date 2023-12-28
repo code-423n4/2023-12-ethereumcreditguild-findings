@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "sl1",
+  "risk": "3",
+  "title": "If a after loss has occured user stakes his CREDIT in SurplusGuildMinter he will get unjustly slashed.",
+  "issueId": 870,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/870"
+}
