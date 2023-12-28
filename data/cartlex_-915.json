@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "cartlex_",
+  "risk": "2",
+  "title": "[M-01] `SimplePSM.sol` contract incompatible with tokens that have decimals more than 18.",
+  "issueId": 915,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/915"
+}
