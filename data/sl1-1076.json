@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "sl1",
+  "risk": "3",
+  "title": "It is possible to front-run notifyPnL with a call to incrementGauge to claim distributed rewards.",
+  "issueId": 1076,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1076"
+}
