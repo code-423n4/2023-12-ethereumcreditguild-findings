@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "glorySec",
+  "risk": "3",
+  "title": "For Loan Terms with No partial repay (maxDelayBetweenPartialRepay = 0), there is no way to liquidate the loan",
+  "issueId": 921,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/921"
+}
