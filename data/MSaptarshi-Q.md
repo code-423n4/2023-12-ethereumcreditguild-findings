@@ -2,6 +2,7 @@
 ## Context 
 The function is not present where the contract is calling the function
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/SimplePSM.sol#L121
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/SurplusGuildMinter.sol#L136
 ## Recommendation
 Change the contract where we are calling the function
 
