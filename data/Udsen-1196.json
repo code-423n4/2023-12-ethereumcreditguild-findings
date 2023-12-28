@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Udsen",
+  "risk": "2",
+  "title": "THE UNDERLYING TOKEN DUST AMOUNT IS STUCK IN THE `SimplePSM` CONTRACT WHILE EXECUTING THE `SimplePSM.redeem` TRANSACTION",
+  "issueId": 1196,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1196"
+}
