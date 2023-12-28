@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AlexCzm",
+  "risk": "3",
+  "title": "After a first slashing event, all subsequent SGM `stake` are slashed because of using a non-initialized `userStake` variable",
+  "issueId": 1046,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1046"
+}
