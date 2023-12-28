@@ -19,3 +19,12 @@ The RateLimitedMinter.sol has ben imported into the SimplePSM.sol contract but n
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/test/proposals/gips/GIP_0.sol#L187C45-L187C45
 
 In the mentioned line of code, the deployment script uses a pegToken address to intialize the psm contract. Since USDC is the first market and the first pegToken, so make sure that before deploying it on chains other than Mainnet, the correct address of USDC on that particular chain is used because the address is different on all chains. 
+
+## [NC-3] decrementGauge and incrementGauge functions in ERCGauges.sol have virtual keyword but they have not been overriden anywhere
+
+1. https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L222
+2. https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L304
+3. https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L272
+4. https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/tokens/ERC20Gauges.sol#L343
+
+The virtual keyword can be removed if not needed for better code clarity.
