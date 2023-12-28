@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "Calling `LendingTermOffboarding.setQuorum` and `GuildVetoGovernor.setQuorum` functions can interfere `LendingTermOffboarding` and `GuildVetoGovernor` contracts' respective ongoing polls",
+  "issueId": 1119,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1119"
+}
