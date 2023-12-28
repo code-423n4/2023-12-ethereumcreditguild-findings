@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "3",
+  "title": "Calling the `ProfitManager.notifyPnL` function can cause `amountForGuild` credit tokens to forever remain in `ProfitManager` contract and be lost when corresponding gauge's weight is 0",
+  "issueId": 785,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/785"
+}
