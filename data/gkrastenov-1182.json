@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "gkrastenov",
+  "risk": "3",
+  "title": "Loans with a minimum borrowing amount can not be partially repaid",
+  "issueId": 1182,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1182"
+}
