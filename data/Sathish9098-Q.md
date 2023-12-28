@@ -327,12 +327,48 @@ https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d
 ### Recommended Mitigation
 Add Maximum allowed borrow limits 
 
+##
+
+## [L-8] ``Decreased ``creditMultiplier`` burden to borrowers
+
+### Impact
+
+When the creditMultiplier is decreased, the effective value of each CREDIT token is reduced. This means that borrowers will owe more CREDIT tokens than they initially borrowed to account for the same value.
+
+For example, if a borrower took out a loan of 1,000 CREDIT when the creditMultiplier was 1.0 (or 1e18 in contract terms), and the creditMultiplier is reduced to 0.8 (or 0.8e18), their debt would increase. The new debt would be calculated as 
+Original Debt
+×
+1
+New Credit Multiplier
+Original Debt× 
+New Credit Multiplier
+1
+​
+ , which in this case is 
+1
+,
+000
+×
+1
+0.8
+=
+1
+,
+250
+1,000× 
+0.8
+1
+​
+ =1,250 CREDIT. The borrower now owes 250 more CREDIT than they initially borrowed.
+
+- If the value of the collateral held against the loan does not increase in line with the increase in debt due to the lowering of the creditMultiplier, the loan could become undercollateralized.
+
+- This situation poses a risk of liquidation if the collateral value falls below certain thresholds, adding further financial pressure on the borrower.
+
+```solidity
+FILE: 
+
+```
 
 
- require(
-            debtToRepay >= (loanDebt * params.minPartialRepayPercent) / 1e18,
-            "LendingTerm: repay below min"
-        );
-
-What if the loanDebt bellow the params.minPartialRepayPercent ? is this reverts always ? 
  
