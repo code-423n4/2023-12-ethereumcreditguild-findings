@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xb41a",
+  "risk": "2",
+  "title": "In function _getVetoCalls() string concatination with parsed encoded timelockid failed [ FILE NAME : GuildVetoGovernor.sol ]",
+  "issueId": 1029,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1029"
+}
