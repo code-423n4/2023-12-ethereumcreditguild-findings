@@ -82,7 +82,7 @@ manual review
 ## Recommended Mitigation Steps
 prevent a lending term from being added when a contract is paused
 
-#L-07 Repayment should be possible until the borrowed amount is greater than or equal to the minimum borrowed amount
+# L-07 Repayment should be possible until the borrowed amount is greater than or equal to the minimum borrowed amount
 
 ## Lines of code
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/loan/LendingTerm.sol#L527
@@ -94,3 +94,20 @@ This could have a minor impact as if the timestamp represents the final block of
 manual review
 ## Recommended Mitigation Steps
 update the partial repayment check to allow repayment when the remaining debt amount  is greater than or equal to the minimum 
+
+# L-08  Voting is not possible even after offboarding proposal by governance
+
+## Lines of code
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/governance/LendingTermOffboarding.sol#L126
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/main/src/tokens/ERC20MultiVotes.sol#L96
+
+## impact
+
+To participate in voting, users must call `LendingTermOffboarding.supportOffboard()`. This function internally triggers `GuildToken.getPastVotes(msg.sender, snapshotBlock)`. If snapshotBlock matches block.number, invoking getPastVotes() will revert.
+
+Thus, users are unable to cast a vote for an offboarding proposal within the same block as the proposed proposal
+## Tools Used
+manual review
+## Recommended Mitigation Steps
+
+User should allow to participate in voting just after the offboarding proposed even in same block.
