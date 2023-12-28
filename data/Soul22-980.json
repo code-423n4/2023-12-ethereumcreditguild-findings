@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Soul22",
+  "risk": "3",
+  "title": "The `offboard()` function can be called again without revoting causing the `PSM` contract unpausable forever",
+  "issueId": 980,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/980"
+}
