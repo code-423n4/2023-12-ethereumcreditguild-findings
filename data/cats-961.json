@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "cats",
+  "risk": "2",
+  "title": "Users can avoid loss to their market's credit token value by front-running and redeeming their tokens before `creditMultiplier` is lowered",
+  "issueId": 961,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/961"
+}
