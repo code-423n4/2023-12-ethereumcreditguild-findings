@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Infect3d",
+  "risk": "3",
+  "title": "Reward distribution calendar isn't correctly implemented, and can be disturbed for almost no cost ### Math",
+  "issueId": 1100,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1100"
+}
