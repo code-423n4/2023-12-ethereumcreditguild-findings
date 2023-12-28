@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xPhantom",
+  "risk": "3",
+  "title": "The bid function can DOS on the second phase of the auction because of an underflow ",
+  "issueId": 1210,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1210"
+}
