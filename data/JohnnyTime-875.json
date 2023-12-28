@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "JohnnyTime",
+  "risk": "2",
+  "title": "Bypass _debtCeiling by temporary increasing the gauge using a flashLoan attack",
+  "issueId": 875,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/875"
+}
