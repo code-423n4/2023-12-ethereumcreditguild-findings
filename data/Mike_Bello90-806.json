@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Mike_Bello90",
+  "risk": "3",
+  "title": "A Contract/User that can Exceed \"MaxGauges\" can Enter in Enough LendinTerm to Avoid Loses Apply in \"applyGaugeLoss\" function Cause The EnumerableSet can Cause a DOS if the Block Gas Limit is Reached",
+  "issueId": 806,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/806"
+}
