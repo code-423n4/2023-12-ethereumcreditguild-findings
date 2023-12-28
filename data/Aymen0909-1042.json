@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Aymen0909",
+  "risk": "2",
+  "title": "`unchecked { ++i; }` is misplaced inside `_decrementWeightUntilFree`",
+  "issueId": 1042,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1042"
+}
