@@ -352,8 +352,7 @@ function _repay(address repayer, bytes32 loanId) internal {
 
 3. Add a mechanism to Lending term if partial repayment is allowed then has to pay with minimum amount . If partial repayment is not required then borrwer has to be repayment full .In below POC code snippet you can see  `minPartialRepayPercent` set as zero means partial repayment has no size it would allows borrowers to pay as little as they want and considered as partial repayment and function `partialRepayDelayPassed()` doesn't give true because borrwer already paying partial amount and loan cannot be called for auction also.
 
-Recommendation:-
-
+ Recommendation:-
 Implement mechaism before creating the term whether the partial repayment to be allowed or not by adding boolean data type. If partial repayement is true then `minPartialRepayPercent` has to be minimum value while intialising the term.
 
 POC link :-
@@ -381,6 +380,8 @@ Highlights of the report
 3.Comparison table with other competitive protocol 
 
 4.Best recommendation which could safely implemented.
+
+
 
 
 
