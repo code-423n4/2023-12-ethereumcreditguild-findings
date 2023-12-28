@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EVDoc",
+  "risk": "3",
+  "title": "LendingTerm can be drained if collateral is cUSDCv3",
+  "issueId": 1052,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1052"
+}
