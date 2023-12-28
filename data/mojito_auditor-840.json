@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "mojito_auditor",
+  "risk": "2",
+  "title": "Users could front-run when bad debt arises to avoid loss due to credit token devaluation",
+  "issueId": 840,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/840"
+}
