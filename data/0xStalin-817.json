@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xStalin",
+  "risk": "3",
+  "title": "When minting new CreditTokens if the account is rebasing and unminted rewards are minted to the account, the total unminted rewards won't be considered to compute the number of rebasing shares owned by the account",
+  "issueId": 817,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/817"
+}
