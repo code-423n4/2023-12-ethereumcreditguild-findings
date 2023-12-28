@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "sl1",
+  "risk": "2",
+  "title": "There is no way to liquidate a position if it breaches maxDebtPerCollateralToken value, creating bad debt.",
+  "issueId": 1057,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1057"
+}
