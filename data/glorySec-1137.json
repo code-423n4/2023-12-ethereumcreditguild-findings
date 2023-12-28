@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "glorySec",
+  "risk": "2",
+  "title": "Off boarding a malicious collateral token can brick some functionality",
+  "issueId": 1137,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1137"
+}
