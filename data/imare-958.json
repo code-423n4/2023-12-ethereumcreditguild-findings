@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "imare",
+  "risk": "2",
+  "title": "user losses or gains reward if `getRewards` is not called before `SurplusGuildMinter#rewardRatio` parameter is changed",
+  "issueId": 958,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/958"
+}
