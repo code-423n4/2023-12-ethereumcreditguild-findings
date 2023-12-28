@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "stackachu",
+  "risk": "3",
+  "title": "LendingTerm.onBid reverts before auction midpoint if the borrower is blocklisted for the collateral token",
+  "issueId": 1162,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1162"
+}
