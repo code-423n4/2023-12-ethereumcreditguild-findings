@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SECURITISE",
+  "risk": "3",
+  "title": "[H-6] Borrowers will pay less interest due to Precision loss in the `interest` repayable by users in the LendingTerm.sol",
+  "issueId": 907,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/907"
+}
