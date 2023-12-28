@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EVDoc",
+  "risk": "2",
+  "title": "DoS on auction mechanism if borrower is blacklisted (USDC, USDT)",
+  "issueId": 1020,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1020"
+}
