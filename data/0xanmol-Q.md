@@ -174,5 +174,87 @@ Ran 1 test suites: 1 tests passed, 0 failed, 0 skipped (1 total tests)
 
 Do not allow `partialRepay` and `addCollateral` after the loan is called.
 
+## [G-1] `LendingTermOffboarding:offBoard` can be called immediately after the quorum is met.
+### Code Line
 
+https://github.com/volt-protocol/ethereum-credit-guild/blob/4d33abf95fee69391af0652e3cbe5e0cffa25f9f/src/governance/LendingTermOffboarding.sol#L139
+
+### Details
+
+When offboarding, it is necessary to meet a specific quorum first. Once this requirement is fulfilled, the term can be offboarded and state changes can be made. This prevents any borrowing or other user actions. The `offboard` function is responsible for facilitating this process. It can be invoked by anyone if the `canOffboard` condition returns true and the moment the quorum is reached in `supportOffboard`.
+
+```solidity
+
+if (_weight + userWeight >= quorum) {
+
+canOffboard[term] = true;
+
+}
+
+```
+
+Instead of only setting `canOffboard` to true when a quorum is reached, it can directly call `offBoard` immediately. This optimization helps save a significant amount of gas for the caller of the `offboard` function and also eliminating the need for an external dependency when making the `offboard` function call.
+
+To do this `offBoard` should be made an internal function instead of external.
+
+
+```diff
+function supportOffboard(
+        uint256 snapshotBlock,
+        address term
+    ) external whenNotPaused {
+        require(
+            block.number <= snapshotBlock + POLL_DURATION_BLOCKS,
+            "LendingTermOffboarding: poll expired"
+        );
+        uint256 _weight = polls[snapshotBlock][term];
+        require(_weight != 0, "LendingTermOffboarding: poll not found");
+        uint256 userWeight = GuildToken(guildToken).getPastVotes(
+            msg.sender,
+            snapshotBlock
+        );
+        require(userWeight != 0, "LendingTermOffboarding: zero weight");
+        require(
+            userPollVotes[msg.sender][snapshotBlock][term] == 0,
+            "LendingTermOffboarding: already voted"
+        );
+
+        userPollVotes[msg.sender][snapshotBlock][term] = userWeight;
+        polls[snapshotBlock][term] = _weight + userWeight;
+        if (_weight + userWeight >= quorum) {
+            canOffboard[term] = true;
++            offBoard(term);
+        }
+        emit OffboardSupport(
+            block.timestamp,
+            term,
+            snapshotBlock,
+            msg.sender,
+            userWeight
+        );
+    }
+```
+
+```diff
+- function offboard(address term) external whenNotPaused {
++ function offboard(address term) internal whenNotPaused {
+        require(canOffboard[term], "LendingTermOffboarding: quorum not met");
+
+        // update protocol config
+        // this will revert if the term has already been offboarded
+        // through another mean.
+        GuildToken(guildToken).removeGauge(term);
+
+        // pause psm redemptions
+
+        if (
+            nOffboardingsInProgress++ == 0 &&
+            !SimplePSM(psm).redemptionsPaused()
+        ) {
+            SimplePSM(psm).setRedemptionsPaused(true);
+        }
+
+        emit Offboard(block.timestamp, term);
+    }
+```
 
