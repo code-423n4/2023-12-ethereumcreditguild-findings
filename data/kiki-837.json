@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "kiki",
+  "risk": "2",
+  "title": " Missing Security Modifiers in Core Contract Functions",
+  "issueId": 837,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/837"
+}
