@@ -9,6 +9,7 @@
 | [L-05](#l-05) | Hardcoded time durations are not compatible with L2s chains                                                                   | Low      |
 | [L-06](#l-06) | `GIP_0`: higher thresholds are set upon protocol deployment                                                                   | Low      |
 | [L-07](#l-07) | `SurplusGuildMinter.setMintRatio` function missing lower bound check                                                          | Low      |
+| [L-08](#l-08) | USDC token is an upgradeable proxy that might brick the deployed terms if upgraded to charge for transfers                                       | Low      |
 
 ## [L-01] `CoreRef.emergencyAction` function doesn't refund residual `msg.value`<a id="l-01" ></a>
 
@@ -311,3 +312,18 @@ Consider adding lower/reasonable values for threshold and quorum limits upon dep
 ## Recommendation
 
 Consider checking against upper and lower bounds before assigning a new value to the `mintRatio` variable.
+## [L-08] USDC token is an upgradeable proxy that might brick the deployed terms if upgraded to charge for transfers<a id="l-08" ></a>
+
+## Details
+
+- USDC token is going to be used as an underlying token for deployed terms (markets), while this token currently doesn't charge fee for each trasnfer transaction (as fee on transfer tokens); but it could be upgraded to charge fees and have the same behavior as fee on transfer tokens where the receiver will receive less than the transferred amount by fee amount.
+
+- This would brick the accounting logic in the `LendingTerm` contract where the **recorded** balance of the CREDIT token (minted for the borrower when he deposits collateral to borrow,`issuance`) will be greater than the contract collateral token balance, which will lead to last users unable to repay their debts as the balance of the contract would be insufficient (`issuance` that represents borrows is > term collateral balance).
+
+## Proof of Concept
+
+[USDC token contract on Ethereum](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48#code#L16)
+
+## Recommendation
+
+Consider updating `LendingTerm._borrow` function to account for this possible future behavior (charging fees for transferring tokens) of USDC token.
