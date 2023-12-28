@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Nyx",
+  "risk": "3",
+  "title": "Auctions can continuously create bad debt for the protocol in volatile market conditions",
+  "issueId": 1067,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1067"
+}
