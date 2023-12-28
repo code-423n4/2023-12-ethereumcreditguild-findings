@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Neon2835",
+  "risk": "3",
+  "title": "In the proposeOffboard function of the LendingTermOffboarding contract, there is no verification of whether the passed-in term parameter comes from the same market.  A malicious actor may use the proposeOffboard function to offboard lending terms from other different markets.",
+  "issueId": 1165,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1165"
+}
