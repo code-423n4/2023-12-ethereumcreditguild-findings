@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Aymen0909",
+  "risk": "2",
+  "title": "users can front run the `notifyLoss` call to unstake their credit and avoid getting slashed",
+  "issueId": 1227,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1227"
+}
