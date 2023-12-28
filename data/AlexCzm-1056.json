@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AlexCzm",
+  "risk": "3",
+  "title": "Due to freely staking (`incrementGauge`) and unstaking(`decrementGauge`), a guild holder can (1) steal interest payed to stakers and (2) avoid being slashed. ",
+  "issueId": 1056,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1056"
+}
