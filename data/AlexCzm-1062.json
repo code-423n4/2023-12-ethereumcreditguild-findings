@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "AlexCzm",
+  "risk": "2",
+  "title": "Users can't be slashed if they increases gaugeWeight within the same block when a loss is reported.",
+  "issueId": 1062,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1062"
+}
