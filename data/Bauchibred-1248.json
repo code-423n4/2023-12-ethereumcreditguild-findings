@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": "The hardcoded `POLL_DURATION_BLOCKS` is way off on the mainnet and would be completely wrongly implemented on other chains",
+  "issueId": 1248,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1248"
+}
