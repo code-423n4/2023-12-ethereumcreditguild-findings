@@ -1,31 +1,9 @@
 ## QA Report
 
-##
-
-## [L-1] ``quorum``  variable not capped with reasonable values 
-
-The quorum is not capped, which could lead to governance issues. Extremely high or low values can affect the offboarding process's integrity
-
-```solidity
-FILE : 2023-12-ethereumcreditguild/src/governance/LendingTermOffboarding.sol
-
-/// @notice set the quorum for offboard votes
-    function setQuorum(
-        uint256 _quorum
-    ) external onlyCoreRole(CoreRoles.GOVERNOR) {
-        emit QuorumUpdated(quorum, _quorum);
-        quorum = _quorum;
-    }
-
-```
-https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/LendingTermOffboarding.sol#L77-L83
-
-### Recommended Mitigation
-Implement ``min`` and ``max`` value checks 
 
 ##
 
-## [L-2]  Hardcoded ``POLL_DURATION_BLOCKS`` cause problems in other chains 
+## [L-1]  Hardcoded ``POLL_DURATION_BLOCKS`` cause problems in other chains 
 
 As per protocol docs its also possible to deploy in Arbitrum
 
@@ -55,46 +33,58 @@ Consider implementing a mechanism to dynamically adjust POLL_DURATION_BLOCKS bas
 
 ##
 
-## [L-3] No same value input control 
+## [L-2] Insufficient Access Control in 'forgive()' Function of AuctionHouse Contract
 
-setMinBorrow() and setGaugeWeightTolerance() does not check if input parameter is the same as the current state of the variable which is being updated. If function is being called with the same value as the current state - even though there's no change - function will success and emit an event that the change has been made.
+The function forgive() lacks sufficient access control measures, making it potentially exploitable. Any external caller can trigger the forgive() function without adequate validation of their authority or role. This oversight could lead to unauthorized closure of auctions and forgiveness of loans, impacting the protocol's financial integrity.
 
 ```solidity
-FILE: 2023-12-ethereumcreditguild/src/governance/ProfitManager.sol
+FILE: 2023-12-ethereumcreditguild/src/loan/AuctionHouse.sol
 
- /// @notice set the minimum borrow amount
-    function setMinBorrow(
-        uint256 newValue
-    ) external onlyCoreRole(CoreRoles.GOVERNOR) {
-        _minBorrow = newValue;
-        emit MinBorrowUpdate(block.timestamp, newValue);
+/// @notice forgive a loan, by marking the debt as a total loss
+    /// @dev this is meant to be used when an auction concludes without anyone bidding,
+    /// even if 0 CREDIT is asked in return. This situation could arise
+    /// if collateral assets are frozen within the lending term contract.
+    function forgive(bytes32 loanId) external {
+        // this view function will revert if the auction is not started,
+        // or if the auction is already ended.
+        (, uint256 creditAsked) = getBidDetail(loanId);
+        require(creditAsked == 0, "AuctionHouse: ongoing auction");
+
+        // close the auction in state
+        auctions[loanId].endTime = block.timestamp;
+        nAuctionsInProgress--;
+
+        // notify LendingTerm of auction result
+        address _lendingTerm = auctions[loanId].lendingTerm;
+        LendingTerm(_lendingTerm).onBid(
+            loanId,
+            msg.sender,
+            0, // collateralToBorrower
+            0, // collateralToBidder
+            0 // creditFromBidder
+        );
+
+        // emit event
+        emit AuctionEnd(
+            block.timestamp,
+            loanId,
+            LendingTerm(_lendingTerm).collateralToken(),
+            0, // collateralSold
+            0 // debtRecovered
+        );
     }
-
-/// @notice set the gauge weight tolerance
-    function setGaugeWeightTolerance(
-        uint256 newValue
-    ) external onlyCoreRole(CoreRoles.GOVERNOR) {
-        gaugeWeightTolerance = newValue;
-        emit GaugeWeightToleranceUpdate(block.timestamp, newValue);
-    }
-
-
 
 ```
-https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/ProfitManager.sol#L178-L192
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/AuctionHouse.sol#L198-L230
 
 ### Recommended Mitigation
-Add same value checks
+Add access control like ``CoreRoles.GOVERNOR``
 
-```solidity
 
-require(newValue!=_minBorrow );
-require(newValue!=gaugeWeightTolerance );
 
-```
 ##
 
-## [L-4] Evaluating the restrictiveness of same-block loan call and auction start checks
+## [L-3] Evaluating the restrictiveness of same-block loan call and auction start checks
 
 The check loan.callTime == block.timestamp assumes that the loan call and the auction start transaction occur in the same block. In reality, due to network congestion or transaction ordering, these two events could be processed in different blocks, even if the transactions are broadcast back-to-back by the user.
 
@@ -124,10 +114,10 @@ Where BUFFER_PERIOD is the permissible time delay.
 +            "AuctionHouse: loan previously called"
  +       ); 
 
-````
+```
 ##
 
-## [L-5] CoreRoles.GAUGE_PNL_NOTIFIER can initiate the auction even particular loanId does not go underwater
+## [L-4] CoreRoles.GAUGE_PNL_NOTIFIER can initiate the auction even particular loanId does not go underwater
 
 The primary risk here is that any entity with the GAUGE_PNL_NOTIFIER role can initiate an auction for any loan, regardless of its association with that specific loan.
 
@@ -181,7 +171,7 @@ https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d
 
 ##
 
-## [L-6] Potential address collision risk with the loan ID generation in the ``_borrow`` function 
+## [L-5] Potential address collision risk with the loan ID generation in the ``_borrow`` function 
 
 The function could reject the creation of a new loan if it detects that the generated loan ID already exists, even though it's a new loan request.
 
@@ -191,7 +181,7 @@ In blockchain transactions, the block timestamp doesn't change from transaction 
 
 Even a small chance of ID collision could pose a significant risk in financial contexts, as it affects the integrity and reliability of the loan management system.
 
-````solidity
+```solidity
 FILE: 2023-12-ethereumcreditguild/src/loan
 /LendingTerm.sol
 
@@ -204,7 +194,7 @@ https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d
 
 ##
 
-## [L-7] All pending transactions become DOS if borrower borrows all issuance from particular LendingTerm
+## [L-6] All pending transactions become DOS if borrower borrows all issuance from particular LendingTerm
 
 A potential Denial-of-Service (DoS) attack on the lending platform, specifically targeting the borrow function in conjunction with the hardcap limit.
 
@@ -329,42 +319,42 @@ Add Maximum allowed borrow limits
 
 ##
 
-## [L-8] ``Decreased ``creditMultiplier`` burden to borrowers
+## [L-7] Borrower Debt Increase Due to Reduced creditMultiplier
 
 ### Impact
 
 When the creditMultiplier is decreased, the effective value of each CREDIT token is reduced. This means that borrowers will owe more CREDIT tokens than they initially borrowed to account for the same value.
 
-For example, if a borrower took out a loan of 1,000 CREDIT when the creditMultiplier was 1.0 (or 1e18 in contract terms), and the creditMultiplier is reduced to 0.8 (or 0.8e18), their debt would increase. The new debt would be calculated as 
-Original Debt
-×
-1
-New Credit Multiplier
-Original Debt× 
-New Credit Multiplier
-1
-​
- , which in this case is 
-1
-,
-000
-×
-1
-0.8
-=
-1
-,
-250
-1,000× 
-0.8
-1
-​
- =1,250 CREDIT. The borrower now owes 250 more CREDIT than they initially borrowed.
-
 - If the value of the collateral held against the loan does not increase in line with the increase in debt due to the lowering of the creditMultiplier, the loan could become undercollateralized.
 
 - This situation poses a risk of liquidation if the collateral value falls below certain thresholds, adding further financial pressure on the borrower.
 
+### POC 
+
+Initial Scenario:
+
+A borrower takes a loan of 1,000 CREDIT.
+The creditMultiplier is 1.0 (or in contract terms, 1e18).
+System Faces Losses:
+
+To address these losses, the creditMultiplier is reduced to 0.8 (0.8e18 in contract terms).
+Effect on the Loan:
+
+Originally, 1 CREDIT = 1 unit of value (since creditMultiplier was 1.0).
+After the decrease, 1 CREDIT = 0.8 units of value (since creditMultiplier is now 0.8).
+This means each CREDIT token now represents less value.
+Recalculating Debt:
+
+The borrower's debt needs to be recalculated to reflect the true value they borrowed.
+Initially, 1,000 CREDIT represented 1,000 units of value.
+Now, to represent the same 1,000 units of value, more CREDIT tokens are needed.
+The new debt becomes 1,250 CREDIT. This is because each CREDIT token is now worth only 0.8 units of value, so more tokens are required to sum up to the original 1,000 units of value.
+Impact on Borrower:
+
+The borrower now owes more CREDIT tokens than they initially borrowed.
+They need to repay 1,250 CREDIT instead of the original 1,000 CREDIT to account for the decrease in value per CREDIT token.
+
+ 
 ```solidity
 FILE: 2023-12-ethereumcreditguild/src/loan/LendingTerm.sol
 
@@ -376,7 +366,205 @@ FILE: 2023-12-ethereumcreditguild/src/loan/LendingTerm.sol
 ```
 https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/LendingTerm.sol#L583-L586
 
+##
+
+## [L-8] Inconsistancy between ``call`` and ``callMany`` functions visibility
+
+Both functions are working same way. But there is the Inconsistancy between ``call`` and ``callMany``.
+
+``call Function``: This function is marked as external, meaning it can only be called from outside the contract. This is typical for functions that are meant to be part of the contract's interface with the outside world, like user interactions. The external visibility is more gas-efficient for functions that will only be called externally.
+
+``callMany Function``: On the other hand, the callMany function is marked as public, indicating that it can be called both internally (from within the contract itself) or externally (like from another contract or an EOA - Externally Owned Account). Making a function public is useful when the functionality needs to be accessible from both within and outside the contract.
+
+``Security Considerations``: Having public functions can potentially introduce security risks if not handled correctly, especially if they can change important state variables or trigger critical functionalities. It’s crucial to ensure proper access control and checks are in place.
+
+```solidity
+FILE: 2023-12-ethereumcreditguild/src/loan/LendingTerm.sol
+
+   function call(bytes32 loanId) external {
+   
+   function callMany(bytes32[] memory loanIds) public {
+
+```
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/LendingTerm.sol#L678
+
 ### Recommended Mitigation
+Consider the same visibility for both functions 
+##
+
+## [L-9] Arbitrage Risks in the AuctionHouse Contract's End-of-Auction Phase
+
+### Impact
+An opportunistic bidder observes the auction and waits until it reaches this final phase.
+Once the auction is in this phase, they can bid and claim the entire collateral without paying any CREDIT.
+This results in the protocol losing valuable collateral without recovering any portion of the defaulted loan, while the bidder gains the collateral for free.
+
+This situation creates an unfair advantage for late bidders and a significant risk for the protocol, as it could lose valuable collateral without adequate compensation.
+
+```solidity
+FILE: 2023-12-ethereumcreditguild/src/loan/AuctionHouse.sol
+
+ else {
+            // receive the full collateral
+            collateralReceived = auctions[loanId].collateralAmount;
+            //creditAsked = 0; // implicit
+        }
+
+```
+
+``Loan Default and Auction Initiation``:
+
+A borrower defaults on their loan, or specific conditions are met (e.g., missed partial repayments), leading to the loan being called.
+The startAuction function is invoked for this loan, setting up an auction with a startTime.
+
+``Auction Phases``:
+
+The auction goes through two main phases:
+First Half (Increasing Collateral Offering): Initially, an increasing portion of the collateral is offered for the full debt amount. This continues until the midPoint of the auction duration.
+Second Half (Decreasing Debt Asking): After the midPoint, the full collateral is offered, but the amount of CREDIT asked for decreases over time.
+
+``Auction Conclusion Phase``:
+
+If the auction reaches the end of its duration (block.timestamp >= _startTime + auctionDuration) without any successful bids, the final phase is triggered.
+In this phase, the getBidDetail function specifies that the full collateral can be claimed for 0 CREDIT. This is a critical point where the arbitrage opportunity arises.
+
+### POC
+- Consider a loan with 100 ETH collateral and a 200 CREDIT debt.
+- The auction starts, but no one bids during the first and second phases.
+- As the auction reaches the final phase, where the full 100 ETH is offered for 0 CREDIT, the bidder steps in.
+- They execute the bid function, claiming the 100 ETH without paying any CREDIT. The protocol incurs a loss equivalent to the market value of the 100 ETH, while the bidder gains a significant profit.
+
+##
+
+## [L-10] ``quorum``  variable not capped with reasonable values 
+
+The quorum is not capped, which could lead to governance issues. Extremely high or low values can affect the offboarding process's integrity
+
+```solidity
+FILE : 2023-12-ethereumcreditguild/src/governance/LendingTermOffboarding.sol
+
+/// @notice set the quorum for offboard votes
+    function setQuorum(
+        uint256 _quorum
+    ) external onlyCoreRole(CoreRoles.GOVERNOR) {
+        emit QuorumUpdated(quorum, _quorum);
+        quorum = _quorum;
+    }
+
+```
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/LendingTermOffboarding.sol#L77-L83
+
+### Recommended Mitigation
+Implement ``min`` and ``max`` value checks 
+
+##
+
+## [L-11] No same value input control 
+
+setMinBorrow() and setGaugeWeightTolerance() does not check if input parameter is the same as the current state of the variable which is being updated. If function is being called with the same value as the current state - even though there's no change - function will success and emit an event that the change has been made.
+
+```solidity
+FILE: 2023-12-ethereumcreditguild/src/governance/ProfitManager.sol
+
+ /// @notice set the minimum borrow amount
+    function setMinBorrow(
+        uint256 newValue
+    ) external onlyCoreRole(CoreRoles.GOVERNOR) {
+        _minBorrow = newValue;
+        emit MinBorrowUpdate(block.timestamp, newValue);
+    }
+
+/// @notice set the gauge weight tolerance
+    function setGaugeWeightTolerance(
+        uint256 newValue
+    ) external onlyCoreRole(CoreRoles.GOVERNOR) {
+        gaugeWeightTolerance = newValue;
+        emit GaugeWeightToleranceUpdate(block.timestamp, newValue);
+    }
+
+
+
+```
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/governance/ProfitManager.sol#L178-L192
+
+### Recommended Mitigation
+Add same value checks
+
+```solidity
+
+require(newValue!=_minBorrow );
+require(newValue!=gaugeWeightTolerance );
+
+```
+
+##
+
+## [L-12] Loan Collateralization Without Caps: Implications for Lending Pool Risk Metrics
+
+Excessive collateral for a single loan can skew the overall risk profile of the lending pool. In typical lending scenarios, loans are diversified to spread risk. However, if one or more loans are over-collateralized, it can lead to a concentration of risk, making the pool more vulnerable to market shifts affecting those specific collaterals.
+
+ In a scenario where the collateral type is a less liquid or easily manipulated asset, borrowers could artificially inflate the value of their collateral, borrow heavily against it, and subsequently reduce the collateral value, affecting the platform's financial stability.
+ 
+```solidity
+FILE: 2023-12-ethereumcreditguild/src/loan/LendingTerm.sol
+
+ /// @notice add collateral on an open loan.
+    /// a borrower might want to add collateral so that his position does not go underwater due to
+    /// interests growing up over time.
+    function _addCollateral(
+        address borrower,
+        bytes32 loanId,
+        uint256 collateralToAdd
+    ) internal {
+        require(collateralToAdd != 0, "LendingTerm: cannot add 0");
+
+        Loan storage loan = loans[loanId];
+
+        // check the loan is open
+        require(loan.borrowTime != 0, "LendingTerm: loan not found");
+        require(loan.closeTime == 0, "LendingTerm: loan closed");
+        require(loan.callTime == 0, "LendingTerm: loan called");
+
+        // update loan in state
+        loans[loanId].collateralAmount += collateralToAdd;
+
+        // pull the collateral from the borrower
+        IERC20(params.collateralToken).safeTransferFrom(
+            borrower,
+            address(this),
+            collateralToAdd
+        );
+
+        // emit event
+        emit LoanAddCollateral(
+            block.timestamp,
+            loanId,
+            borrower,
+            collateralToAdd
+        );
+    }
+
+```
+
+##
+
+## [NC-1] Avoid Commented Code 
+
+```solidity
+FILE: 2023-12-ethereumcreditguild/src/loan/AuctionHouse.sol
+
+159:  //creditAsked = 0; // implicit
+
+```
+https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/AuctionHouse.sol#L159
+
+
+
+
+
+
+
+
 
 
 
