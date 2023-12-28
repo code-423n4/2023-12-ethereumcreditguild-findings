@@ -199,7 +199,7 @@ It can be seen that if user's gauge weight is not reset by `applyGaugeLoss()` fu
 The following vuln is described below:
 1, Alice stake GUILD token and gain more guild token by time passed
 2, bad debt appeared, but Alice's guild token is not reset because no one call `applyGaugeLoss`
-3, If new reward appear, Alice can claim reward based on these GUILD token
+3, If new reward appear, Alice can claim reward based on these old GUILD token
 ## Impact
 User who didn't apple gauge loss can keep claiming reward, although they can not gain more guild token.
 ## Recommendation
