@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EVDoc",
+  "risk": "3",
+  "title": "Unable to change the auction house if forgive() is called by the governor on an auctioned loan",
+  "issueId": 1014,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1014"
+}
