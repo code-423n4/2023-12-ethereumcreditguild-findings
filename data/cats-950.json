@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "cats",
+  "risk": "3",
+  "title": "Due to wrong calculations in `SurplusGuildMinter::getRewards`, all users rewards will always return slashed as long as gauge takes a single loss.",
+  "issueId": 950,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/950"
+}
