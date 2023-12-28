@@ -132,7 +132,17 @@ For example the CreditToken.sol automatically have the Pauseable feature with th
 
 Recommendation: Only implement the Pauseable feature on contracts that are meant to be Pauseable and add the ` whenNotPaused `  modifier to critical user functions of the ` pauseable contracts ` .
 
+## [L-6] Incorrect require message
 
+There is 1 instance of this
+- https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/2376d9af792584e3d15ec9c32578daa33bb56b43/src/loan/LendingTerm.sol#L345
+
+The error message in the require function is incorrect because its talking about `stake`. The message can be updated to `LendingTerm: Collateral cannot be 0`.
+
+```diff
+-- require(collateralAmount != 0, "LendingTerm: cannot stake 0");
+++ require(collateralAmount != 0, "LendingTerm: Collateral cannot be 0");
+```
 
 
 
