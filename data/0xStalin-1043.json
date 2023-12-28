@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xStalin",
+  "risk": "2",
+  "title": "Borrower can get blacklisted his address in the Collateral token contract to force the loan to be forgiven and introduce bad debt into the system",
+  "issueId": 1043,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1043"
+}
