@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xaltego",
+  "risk": "2",
+  "title": "Zeroing term surplus buffer can cause inability to unstake funds",
+  "issueId": 910,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/910"
+}
