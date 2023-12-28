@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "debo",
+  "risk": "3",
+  "title": "[H-01] Cross function reentrancy from the LendingTermOffboarding contract and cleanup function",
+  "issueId": 963,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/963"
+}
