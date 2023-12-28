@@ -8,6 +8,8 @@
 
 - ### [L-03. Use latest stable version of Solidity](#L-03)
 
+- ### [L-04. Erroneous comments](#L-04)
+
 - ## [NC-01. Missing NatSpec @notice and @param tags in events, modifiers #and functions](#NC-01)
 
 - ### [NC-02. Missing NatSpec function @return tag](#NC-02)
@@ -86,6 +88,26 @@ Files:
 - [SurplusGuildMinter.sol](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/8f439544b8a634e8f3c3db718416a39752cd471e/src/loan/SurplusGuildMinter.sol#L2)
 - [RateLimitedMinter.sol](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/8f439544b8a634e8f3c3db718416a39752cd471e/src/limits/RateLimitedMinter.sol#L2)
 - [RateLimitedV2.sol](https://github.com/code-423n4/2023-12-ethereumcreditguild/blob/8f439544b8a634e8f3c3db718416a39752cd471e/src/utils/RateLimitedV2.sol#L2)
+
+### <a id='L-04'></a>[L-04] Erroneous comments
+
+```solidity
+File: src/loan/AuctionHouse.sol
+
+11: /// @notice emitted when au action starts
+
+19: /// @notice emitted when au anction ends
+```
+
+Above comments should be corrected as follows:
+
+```solidity
+File: src/loan/AuctionHouse.sol
+
+11: /// @notice emitted when an auction starts
+
+19: /// @notice emitted when an auction ends
+```
 
 ## Non-critical Issues
 
