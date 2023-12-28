@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EllipticPoint",
+  "risk": "2",
+  "title": "GuildToken - Gauge loss slashing can be avoided by frontrunning the bid of negative PnL loans",
+  "issueId": 881,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/881"
+}
