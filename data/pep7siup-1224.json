@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "pep7siup",
+  "risk": "2",
+  "title": "Cannot Transfer GuildToken If Loss Unapplied Even Though There Are Enough To-Be-Free Tokens ",
+  "issueId": 1224,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1224"
+}
