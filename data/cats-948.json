@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "cats",
+  "risk": "3",
+  "title": "Griefing lending term onBoarding indefinitely by front-running proposal and then cancelling it",
+  "issueId": 948,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/948"
+}
