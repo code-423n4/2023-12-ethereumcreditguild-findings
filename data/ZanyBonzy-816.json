@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "ZanyBonzy",
+  "risk": "2",
+  "title": "Use of hardcoded, possibly incorrect time constants.",
+  "issueId": 816,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/816"
+}
