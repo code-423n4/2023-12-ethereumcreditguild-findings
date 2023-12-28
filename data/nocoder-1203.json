@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "nocoder",
+  "risk": "2",
+  "title": "There is a risk of DoS attacks due to rate limits imposed on minting tokens",
+  "issueId": 1203,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1203"
+}
