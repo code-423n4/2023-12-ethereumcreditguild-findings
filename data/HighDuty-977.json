@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "HighDuty",
+  "risk": "3",
+  "title": "`getRewards` would mark user as slashed even if the loss has been applied, which leads to user funds loss",
+  "issueId": 977,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/977"
+}
