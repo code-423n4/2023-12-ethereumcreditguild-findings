@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "klau5",
+  "risk": "3",
+  "title": "getRewards - users who slashed but not processed yet still can receive new rewards",
+  "issueId": 956,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/956"
+}
