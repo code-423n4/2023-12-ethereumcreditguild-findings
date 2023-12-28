@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "SECURITISE",
+  "risk": "3",
+  "title": "Borrower can still add collateral, even after he can get liquidated because lending term is deprecated",
+  "issueId": 834,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/834"
+}
