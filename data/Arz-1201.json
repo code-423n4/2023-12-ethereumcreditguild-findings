@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Arz",
+  "risk": "2",
+  "title": "An attacker can sandwich transactions where profit is notified to profit from gauge rewards",
+  "issueId": 1201,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1201"
+}
