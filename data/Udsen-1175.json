@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Udsen",
+  "risk": "2",
+  "title": "THE RETURN BOOLEAN VALUE OF THE `CreditToken.transfer` AND `CreditToken.transferFrom` FUNCTIONS ARE NOT CHECKED FOR SUCCESS THUS PROMPTING ERRORNEOUS STATE CHANGES",
+  "issueId": 1175,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1175"
+}
