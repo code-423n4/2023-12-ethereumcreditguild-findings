@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "mojito_auditor",
+  "risk": "2",
+  "title": "`debtCeiling()` forgot to add `gaugeWeightDelta` when calculating `totalWeight`",
+  "issueId": 841,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/841"
+}
