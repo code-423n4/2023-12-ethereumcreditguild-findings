@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Infect3d",
+  "risk": "2",
+  "title": "If totalRebasingShares == 0 in the middle of a distribution, all remaining distribution is lost",
+  "issueId": 1094,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1094"
+}
