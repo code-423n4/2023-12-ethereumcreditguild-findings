@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xbepresent",
+  "risk": "2",
+  "title": "The user `guild amount` is not updated if the `mintRatio` is updated, causing users to get more rewards in the `SurplusGuildMinter` contract",
+  "issueId": 1160,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1160"
+}
