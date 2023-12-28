@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "14si2o_Flint",
+  "risk": "2",
+  "title": "Pausing will freeze active offboarding polls, causing them to fail, which allows bad lending terms to remain active ",
+  "issueId": 831,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/831"
+}
