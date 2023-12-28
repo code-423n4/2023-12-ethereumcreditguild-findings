@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "3",
+  "title": "Malicious actor can steal unclaimed gauge rewards, which other users are entitled to, by adding and removing votes for a gauge after profit is reported for such gauge",
+  "issueId": 788,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/788"
+}
