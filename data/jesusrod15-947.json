@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "jesusrod15",
+  "risk": "3",
+  "title": "borrower can  break repay due to blacklist usdc",
+  "issueId": 947,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/947"
+}
