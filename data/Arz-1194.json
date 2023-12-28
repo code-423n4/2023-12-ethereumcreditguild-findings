@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Arz",
+  "risk": "3",
+  "title": "The userGaugeProfitIndex is not set correctly, allowing an attacker to receive rewards without waiting",
+  "issueId": 1194,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1194"
+}
