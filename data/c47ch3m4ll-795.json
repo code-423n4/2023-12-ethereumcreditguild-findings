@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "c47ch3m4ll",
+  "risk": "3",
+  "title": "AuctionHouse and LendingTerm - Decreasing credit multiplier during auction causes loss for other lending terms #9",
+  "issueId": 795,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/795"
+}
