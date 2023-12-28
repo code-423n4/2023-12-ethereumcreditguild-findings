@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xSwahili",
+  "risk": "2",
+  "title": "Credit stakers can get Zero guild rewards when staking due to improper check on the mintRatio",
+  "issueId": 815,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/815"
+}
