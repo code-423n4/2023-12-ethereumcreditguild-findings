@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Udsen",
+  "risk": "2",
+  "title": "`SimplePSM` CONTRACT CAN NOT BE DEPLOYED WITH `pegTokens` WHICH HAS MORE THAN 18 DECIMAL PLACES",
+  "issueId": 1059,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1059"
+}
