@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Chinmay",
+  "risk": "2",
+  "title": "Wrong comparison to determine the debtCeiling allows user to decrementGauge when he should not have been allowed",
+  "issueId": 887,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/887"
+}
