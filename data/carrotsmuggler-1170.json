@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "carrotsmuggler",
+  "risk": "3",
+  "title": "`totalBorrowedCredit` can revert, breaking gauges.",
+  "issueId": 1170,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1170"
+}
