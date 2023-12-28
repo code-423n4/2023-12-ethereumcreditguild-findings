@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "rbserver",
+  "risk": "3",
+  "title": "Minting credit tokens before `creditMultiplier` is updated down and redeeming for underlying tokens after `creditMultiplier` is updated down would cause an underlying token amount that is a part of `pegTokenBalance` to always remain in `SimplePSM` contract and be lost",
+  "issueId": 786,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/786"
+}
