@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "Nyx",
+  "risk": "2",
+  "title": "The partialRepay() function may not be usable in some cases",
+  "issueId": 1171,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1171"
+}
