@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xadrii",
+  "risk": "2",
+  "title": "Unbounded loop in SGM’s getRewards() could lead to DoS when staking/unstaking",
+  "issueId": 905,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/905"
+}
