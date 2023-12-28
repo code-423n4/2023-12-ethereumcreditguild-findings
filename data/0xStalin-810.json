@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xStalin",
+  "risk": "3",
+  "title": "Biding on auctions can cause the protocol to accrue bad debt because the repaid amount by the bidder is not recomputed with the current value of creditMultiplier",
+  "issueId": 810,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/810"
+}
