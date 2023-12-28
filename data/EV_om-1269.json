@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "EV_om",
+  "risk": "2",
+  "title": "Incorrect constant used in deployment script",
+  "issueId": 1269,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1269"
+}
