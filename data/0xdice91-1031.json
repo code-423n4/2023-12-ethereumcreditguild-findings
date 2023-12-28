@@ -1,0 +1,8 @@
+{
+  "contest": 310,
+  "handle": "0xdice91",
+  "risk": "3",
+  "title": "An uninitialised variable in `SurplusGuildMinter.getRewards()` causes first-loss capital stakers to `lose` all their `credit tokens`. ",
+  "issueId": 1031,
+  "issueUrl": "https://github.com/code-423n4/2023-12-ethereumcreditguild-findings/issues/1031"
+}
