@@ -18,36 +18,37 @@ The Ethereum Credit Guild is a DeFi protocol featuring a dual-token system: GUIL
 
 ## Systemic risks
 
-### gUSDC Value Fluctuations and the Lending Mechanism
+### gUSDC Value Fluctuations Risks
 
 - gUSDC, being pegged to USDC, should ideally maintain a stable value. However, if its value deviates significantly from USDC (due to market dynamics, liquidity issues, or rebasing mechanics), this could impact the borrowing and lending operations.
 - The protocol’s reliance on gUSDC for lending activities means that fluctuations in its value could affect the loan-to-value (LTV) ratios. A decrease in gUSDC value might result in loans becoming under-collateralized, triggering liquidations.
 
-### GUILD Tokens and Gauge Voting
+### GUILD Tokens and Gauge Voting Risk
 
 - GUILD tokens are used for governance decisions, including voting on LendingTerms. Significant changes in the GUILD value could influence voter behavior, potentially skewing decision-making towards short-term gains rather than long-term protocol health.
 - If GUILD's value increases significantly, it might attract speculative voting behavior, while a decrease in value could lead to apathy or reduced participation among stakeholders.
 
-### Rebasing and gUSDC Stability
+### Rebasing and gUSDC Stability Risk
 
 - The ERC20RebaseDistributor mechanism might be involved in maintaining gUSDC’s peg to USDC. If rebasing is not accurately aligned with market conditions, it could lead to either inflationary or deflationary pressures on gUSDC.
 - Inaccurate rebasing can affect users' trust in gUSDC's stability, which is crucial for its function as a credit token.
 
-### Collateral Auction Dynamics in AuctionHouse
+### Collateral Auction Dynamics in AuctionHouse 
 
 - The AuctionHouse contract presumably handles liquidations of collateral. Fluctuations in gUSDC or the collateral’s value could impact the efficacy of these auctions.
 - In a scenario where gUSDC’s value drops, the proceeds from liquidation auctions might not cover the outstanding loans, leading to bad debt.
 
-### Impact on Credit Ceiling and Lending Terms
+### Impact on Credit Ceiling and Lending Terms 
 
 - Changes in gUSDC value could necessitate adjustments in global debt ceilings and other parameters within LendingTerms to manage the protocol's overall risk exposure.
 - If gUSDC devalues, the protocol might need to reduce its debt ceiling to maintain a healthy collateralization ratio across its loan portfolio.
 
-### Minting and Staking Dynamics:
+### Minting and Staking Dynamics
 
 The mechanism for staking gUSDC to mint GUILD, and the reverse process, might be influenced by the changing values of these tokens. A decline in GUILD's value, for instance, could reduce the incentive for users to stake gUSDC.
 
-### Interactions with External Factors:
+### Interactions with External Factors
+
 Given that gUSDC is pegged to USDC, external factors affecting USDC (like regulatory changes or issuer solvency) could indirectly impact gUSDC's stability and, by extension, the entire Ethereum Credit Guild ecosystem.
 
 ## Technical risks
@@ -397,6 +398,8 @@ The handling of losses (negative values) is complex and involves multiple state 
 ``Decrease in CREDIT Value``: The decrease in the creditMultiplier effectively lowers the value of CREDIT tokens throughout the system. This means that every CREDIT token now represents a smaller share of the system's value.
 
 ``Increased Debt for Borrowers``:  This decrease means borrowers now owe more CREDIT tokens to cover the same nominal value of debt.
+
+
 
 
 
