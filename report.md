@@ -3936,7 +3936,7 @@ The mechanism utilized by the ECG protocol to address loan losses is as follows:
 
 A `term` can be offboarded if it is unsafe. Once offboarded, the redemption function of corresponding `SimplePSM` will be paused:
 
-```solidity:
+```solidity
 161:        // pause psm redemptions
 162:        if (
 163:            nOffboardingsInProgress++ == 0 &&
